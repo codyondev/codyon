@@ -1,0 +1,23 @@
+@layer components {
+  .flip {
+    @apply w-[360px] h-[230px];
+    perspective: 1100px;
+    &:hover {
+      & .card {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  .card {
+    @apply w-full h-full relative duration-300 bg-white rounded-[10px];
+    transform-style: preserve-3d;
+    & .front,
+    & .back {
+      @apply absolute w-full h-full rounded-[10px] shadow-card transform-gpu;
+      backface-visibility: hidden;
+    }
+    & .back {
+      transform: rotateX(180deg);
+    }
+  }
+}

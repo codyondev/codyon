@@ -8,7 +8,12 @@ const FasionCardWithUser: NextPage = function () {
         <h1 className="text-center">My Card</h1>
       </header>
       <main className="">
-        <div className="mt-[150px]" />
+        <div className="flip mt-[150px] mx-auto">
+          <div className="card">
+            <div className="front">front</div>
+            <div className="back">back</div>
+          </div>
+        </div>
       </main>
       <footer className="fixed bottom-[40px] w-full flex justify-center items-center max-w-mobile">
         <button

@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       boxShadow: {
         root: 'rgb(0 0 0 / 16%) 0px 0px 8px',
+        card: '4px 10px 11px rgba(0, 0, 0, 0.06)',
       },
       backgroundColor: {
         main: '#F6F7F8',
