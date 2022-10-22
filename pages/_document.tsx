@@ -20,7 +20,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head />
-        <body>
+        <meta name="color-scheme" content="light" />
+        <meta name="supported-color-schemes" content="light" />
+        <body className="text-black max-w-mobile mx-auto min-h-[100vh] shadow-root text-root bg-main">
           <Main />
           <NextScript />
         </body>
