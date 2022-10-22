@@ -1,19 +1,17 @@
+import FlipCard from '@components/fashoin-card/flip-card';
 import { NextPage } from 'next';
-import React from 'react';
+import React, { useState } from 'react';
 
 const FasionCardWithUser: NextPage = function () {
+  const [rotate, setRotate] = useState<boolean>(false);
+
   return (
     <>
       <header className="h-[45px] w-full flex justify-center items-center bg-white">
         <h1 className="text-center">My Card</h1>
       </header>
       <main className="">
-        <div className="flip mt-[150px] mx-auto">
-          <div className="card">
-            <div className="front">front</div>
-            <div className="back">back</div>
-          </div>
-        </div>
+        <FlipCard rotate={rotate} layoutClassName="mt-[150px] mx-auto" />
       </main>
       <footer className="fixed bottom-[40px] w-full flex justify-center items-center max-w-mobile">
         <button

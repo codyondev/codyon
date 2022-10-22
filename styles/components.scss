@@ -2,7 +2,7 @@
   .flip {
     @apply w-[360px] h-[230px];
     perspective: 1100px;
-    &:hover {
+    &.rotate {
       & .card {
         transform: rotateX(180deg);
       }
