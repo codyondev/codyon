@@ -1,6 +1,8 @@
 import { classname } from '@lib/client';
 import Image from 'next/image';
-import React from 'react';
+import React, { useMemo } from 'react';
+import { QRCodeCanvas } from 'qrcode.react';
+import { useRouter } from 'next/router';
 import profile from '@public/images/profile.jpg';
 
 interface FlipCardProps {
@@ -9,6 +11,15 @@ interface FlipCardProps {
 }
 
 export default function FlipCard({ rotate, layoutClassName }: FlipCardProps) {
+  const router = useRouter();
+
+  const href = useMemo(() => {
+    if (typeof window === 'undefined') {
+      return '';
+    }
+    return window.location.href;
+  }, []);
+
   return (
     <div
       className={classname(
@@ -18,7 +29,7 @@ export default function FlipCard({ rotate, layoutClassName }: FlipCardProps) {
       )}
     >
       <div className="card">
-        <div className="front px-[8px] pt-[16px] pb-[10px]">
+        <div className="front px-[8px] pt-[16px] pb-[10px] relative">
           <div className="flex">
             <section className="ml-2 max-w-[105px]">
               <span className="block text-[8px] text-[#BABABA] font-light leading-[12px]">
@@ -60,6 +71,13 @@ export default function FlipCard({ rotate, layoutClassName }: FlipCardProps) {
                 </tbody>
               </table>
             </section>
+          </div>
+          <div className="flex justify-end items-end">
+            <QRCodeCanvas
+              value={href}
+              size={41}
+              className="absolute bottom-[10px]"
+            />
           </div>
         </div>
         <div className="back">back</div>
