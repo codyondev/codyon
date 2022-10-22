@@ -1,0 +1,33 @@
+@layer components {
+  .flip {
+    @apply w-[360px] h-[230px];
+    perspective: 1100px;
+    &.rotate {
+      & .card {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  .card {
+    @apply w-full h-full relative duration-300 bg-white rounded-[10px];
+    transform-style: preserve-3d;
+    & .front,
+    & .back {
+      @apply absolute w-full h-full rounded-[10px] shadow-card transform-gpu;
+      backface-visibility: hidden;
+    }
+    & .back {
+      transform: rotateX(180deg);
+    }
+  }
+  .table {
+    @apply text-[11px] text-[#404040];
+    font-family: 'Quicksand', sans-serif;
+    & tr {
+      @apply h-[20px]  tracking-very-tighter;
+    }
+    & td:last-of-type {
+      padding-left: 20px;
+    }
+  }
+}

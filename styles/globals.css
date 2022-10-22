@@ -1,3 +1,6 @@
+@import url(./components.scss);
+@import url(./utilities.css);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +20,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 @media (prefers-color-scheme: dark) {
