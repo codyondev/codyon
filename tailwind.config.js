@@ -19,6 +19,9 @@ module.exports = {
       fontSize: {
         root: '16px',
       },
+      letterSpacing: {
+        'very-tighter': '-0.06em',
+      },
     },
   },
   plugins: [],

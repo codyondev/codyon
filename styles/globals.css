@@ -1,4 +1,5 @@
 @import url(./components.scss);
+@import url(./utilities.css);
 
 @tailwind base;
 @tailwind components;

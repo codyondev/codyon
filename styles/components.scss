@@ -20,4 +20,14 @@
       transform: rotateX(180deg);
     }
   }
+  .table {
+    @apply text-[11px] text-[#404040];
+    font-family: 'Quicksand', sans-serif;
+    & tr {
+      @apply h-[20px]  tracking-very-tighter;
+    }
+    & td:last-of-type {
+      padding-left: 20px;
+    }
+  }
 }

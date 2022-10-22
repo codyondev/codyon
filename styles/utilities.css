@@ -1,0 +1,9 @@
+@layer utilities {
+  .font-purple-purse {
+    font-family: 'Purple Purse', cursive;
+    font-weight: 400;
+  }
+  .font-quick-sand {
+    font-family: 'Quicksand', sans-serif;
+  }
+}
