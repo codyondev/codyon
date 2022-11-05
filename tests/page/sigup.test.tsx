@@ -1,5 +1,6 @@
 import SignUp from '@pages/signup';
-import { render } from '@testing-library/react';
+
+import { render } from '../testUtils';
 
 describe('SignUp Page', () => {
   it('render page', () => {

@@ -5,8 +5,8 @@ import { useMutation } from 'react-query';
 import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
-import { EMAIL_DOMAIN, PASSWORD_REGEXP, classname } from '@lib/client';
-import { signup } from '@lib/request';
+import { EMAIL_DOMAIN, PASSWORD_REGEXP, classname } from '@lib/client/index';
+import { signup } from '@lib/client/request';
 import { Option } from '@models/form';
 
 interface SignUpFormType {
