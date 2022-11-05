@@ -1,6 +1,7 @@
-import { classname } from '@lib/client';
 import React, { HTMLAttributes } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
+
+import { classname } from '@lib/client';
 
 interface SelectProps {
   register: UseFormRegisterReturn;

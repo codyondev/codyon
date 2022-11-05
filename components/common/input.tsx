@@ -1,6 +1,7 @@
-import { classname } from '@lib/client';
 import React, { HTMLAttributes, memo } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
+
+import { classname } from '@lib/client';
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
   register: UseFormRegisterReturn;

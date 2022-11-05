@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { NextPage } from 'next';
-import Input from '@components/common/input';
-import Head from 'next/head';
-
 import { Option } from 'models/form';
-import { EMAIL_DOMAIN } from '@lib/client';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import React, { useEffect, useState } from 'react';
+
 import SignUpForm from '@components/auth/signup-form';
+import Input from '@components/common/input';
+import { EMAIL_DOMAIN } from '@lib/client';
 
 const SignUp: NextPage = function () {
   return (

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import CircleAlert from '@components/icons/circle-alert';
-import Select from '@components/common/select';
+
 import Input from '@components/common/input';
+import Select from '@components/common/select';
+import CircleAlert from '@components/icons/circle-alert';
 import { EMAIL_DOMAIN } from '@lib/client';
 import { Option } from '@models/form';
 
