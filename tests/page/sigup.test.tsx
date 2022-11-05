@@ -1,6 +1,6 @@
 import SignUp from '@pages/signup';
 import { fireEvent } from '@testing-library/dom';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { createWrapper } from '../testUtils';
 

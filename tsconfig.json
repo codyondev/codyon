@@ -23,7 +23,8 @@
       "@hooks/*": ["hooks/*"],
       "@models/*": ["models/*"],
       "@modules/*": ["modules/*"],
-      "@public/*": ["public/*"]
+      "@public/*": ["public/*"],
+      "@mocks/*": ["mocks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

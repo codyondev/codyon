@@ -4,3 +4,4 @@ _next
 .next
 .github
 node_modules
+public/*
