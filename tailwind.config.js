@@ -2,9 +2,10 @@ const colors = {
   mint: '#ABE8F0',
   kakao: '#FFEA2C',
   darkmint: '#45C6D7',
-  'gray-778': '#F7F7F8',
   'gray-29': '#E9E9E9',
+  'gray-75': '#757575',
   'gray-88': '#B8B8B8',
+  'gray-778': '#F7F7F8',
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -19,7 +20,11 @@ module.exports = {
         root: 'rgb(0 0 0 / 16%) 0px 0px 8px',
         card: '4px 10px 11px rgba(0, 0, 0, 0.06)',
       },
-      backgroundColor: { ...colors, main: '#F6F7F8' },
+      backgroundColor: {
+        ...colors,
+        main: '#F6F7F8',
+        logo: 'inear-gradient(180deg, #888888 10.94%, #000000 55.73%);',
+      },
       maxWidth: {
         mobile: '440px',
       },

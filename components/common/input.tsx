@@ -1,5 +1,5 @@
 import { classname } from '@lib/client';
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, memo } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
@@ -9,7 +9,7 @@ interface InputProps extends HTMLAttributes<HTMLInputElement> {
   type?: string;
 }
 
-export default function Input({
+const Input = function ({
   register,
   value,
   overrideClassName,
@@ -19,11 +19,14 @@ export default function Input({
     <input
       className={classname(
         overrideClassName ?? '',
-        value?.trim() ? 'bg-white border-gray-29 border' : 'bg-gray-778',
-        'text-[14px] px-[1.4em] py-[1.1em] rounded-md text-dark outline-none focus:border-darkmint focus:border-2 placeholder:text-gray-88',
+        value?.trim()
+          ? 'bg-white border-gray-29'
+          : 'bg-gray-778 border-gray-778',
+        'text-[14px] px-[1.4em] py-[1.1em] rounded-md text-dark outline-none focus:border-darkmint focus:border-1 placeholder:text-gray-88 border',
       )}
       {...rest}
       {...register}
     />
   );
-}
+};
+export default memo(Input);
