@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useMutation } from 'react-query';
 
 import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
 import { EMAIL_DOMAIN, PASSWORD_REGEXP, classname } from '@lib/client';
+import { signup } from '@lib/request';
 import { Option } from '@models/form';
 
 interface SignUpFormType {
@@ -21,6 +23,7 @@ const options: Option[] = EMAIL_DOMAIN.map((domain) => ({
 export default function SignUpForm() {
   const { register, watch, resetField, handleSubmit, formState } =
     useForm<SignUpFormType>({ mode: 'onBlur' });
+  const { isLoading, mutate } = useMutation(signup<SignUpFormType, any>);
   const [directly, setDirectly] = useState<boolean>(false);
   const { errors, isDirty, isValid } = formState;
 
@@ -33,7 +36,7 @@ export default function SignUpForm() {
   };
 
   const onSubmit = async (data: SignUpFormType) => {
-    console.log(data);
+    mutate(data);
   };
 
   return (
@@ -77,12 +80,12 @@ export default function SignUpForm() {
       </div>
       <button
         type="submit"
-        disabled={!isDirty || !isValid}
+        disabled={!isDirty || !isValid || isLoading}
         className={classname(
           'w-full text-center mt-8 py-5 rounded-md text-[17px] font-semibold',
           !isDirty || !isValid
             ? 'bg-gray-778 text-gray-88'
-            : 'bg-darkmint text-white',
+            : 'bg-mint text-white',
         )}
       >
         이메일로 가입하기
