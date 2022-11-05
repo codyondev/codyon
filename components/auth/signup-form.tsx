@@ -6,7 +6,7 @@ import ErrorMessage from '@components/common/error-message';
 import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
-import { EMAIL_DOMAIN, PASSWORD_REGEXP, classname } from '@lib/client/index';
+import { EMAIL_DOMAIN, PASSWORD_REGEXP, classname } from '@lib/client';
 import { signup } from '@lib/client/request';
 import { Option } from '@models/form';
 
@@ -60,6 +60,7 @@ export default function SignUpForm() {
           register={register('email', { required: true })}
           value={watch('email')}
           error={errors.email}
+          aria-label="email"
         />
         {directly ? (
           <Input
@@ -67,12 +68,14 @@ export default function SignUpForm() {
             register={register('domain', { required: true })}
             value={watch('domain')}
             error={errors.domain}
+            aria-label="input-domain"
           />
         ) : (
           <Select
             register={register('domain')}
             options={options}
             onChangeDirectly={onChangeDirectly}
+            aria-label="select-domain"
           />
         )}
         <Input
@@ -85,6 +88,7 @@ export default function SignUpForm() {
           })}
           value={watch('password')}
           error={errors.password}
+          aria-label="password"
         />
       </div>
       <button

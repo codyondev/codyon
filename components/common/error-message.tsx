@@ -17,7 +17,10 @@ const ErrorMessage = function ({ message }: ErrorMessageProps) {
   }, []);
 
   return (
-    <span className="w-full absolute left-0 -bottom-[25px] text-[12px] text-darkmint px-3">
+    <span
+      aria-label="error message"
+      className="w-full absolute left-0 -bottom-[25px] text-[12px] text-darkmint px-3"
+    >
       <UnHappy className="inline mr-1" />
       {text}
     </span>
