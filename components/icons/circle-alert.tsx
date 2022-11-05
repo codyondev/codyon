@@ -1,8 +1,6 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, memo } from 'react';
 
-export default function CircleAlert({
-  ...rest
-}: HTMLAttributes<SVGSVGElement>) {
+const CircleAlert = function ({ ...rest }: HTMLAttributes<SVGSVGElement>) {
   return (
     <svg
       width="15"
@@ -32,4 +30,6 @@ export default function CircleAlert({
       </defs>
     </svg>
   );
-}
+};
+
+export default memo(CircleAlert);
