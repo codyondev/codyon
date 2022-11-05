@@ -1,8 +1,9 @@
 import React, { HTMLAttributes } from 'react';
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
 
-import UnHappy from '@components/icons/un-happy';
 import { classname } from '@lib/client';
+
+import ErrorMessage from './error-message';
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
   register: UseFormRegisterReturn;
@@ -33,10 +34,7 @@ const Input = function ({
         {...register}
       />
       {error?.message === 'not_match' && (
-        <span className="w-full absolute left-0 top-[60px] text-[12px] text-darkmint px-3">
-          <UnHappy className="inline mr-1" />
-          영소문자와 숫자를 포함하여 8자리 이상을 입력해주세요
-        </span>
+        <ErrorMessage message={error.message} />
       )}
     </div>
   );

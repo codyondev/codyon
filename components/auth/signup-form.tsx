@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 
+import ErrorMessage from '@components/common/error-message';
 import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
@@ -21,10 +22,18 @@ const options: Option[] = EMAIL_DOMAIN.map((domain) => ({
 })).concat({ label: '직접 입력', value: 'directly' });
 
 export default function SignUpForm() {
-  const { register, watch, resetField, handleSubmit, formState } =
-    useForm<SignUpFormType>({ mode: 'onBlur' });
-  const { isLoading, mutate } = useMutation(signup<SignUpFormType, any>);
   const [directly, setDirectly] = useState<boolean>(false);
+  const [loginError, setLoginError] = useState<boolean>(false);
+  const { register, watch, resetField, handleSubmit, formState, setError } =
+    useForm<SignUpFormType>({ mode: 'onBlur' });
+  const { isLoading, mutate } = useMutation(signup<SignUpFormType, any>, {
+    onSuccess: () => {
+      setLoginError(true);
+    },
+    onError: () => {
+      setLoginError(true);
+    },
+  });
   const { errors, isDirty, isValid } = formState;
 
   const onChangeDirectly = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -82,13 +91,14 @@ export default function SignUpForm() {
         type="submit"
         disabled={!isDirty || !isValid || isLoading}
         className={classname(
-          'w-full text-center mt-8 py-5 rounded-md text-[17px] font-semibold',
+          'w-full text-center mt-8 py-5 rounded-md text-[17px] font-semibold relative',
           !isDirty || !isValid
             ? 'bg-gray-778 text-gray-88'
             : 'bg-mint text-white',
         )}
       >
         이메일로 가입하기
+        {loginError && <ErrorMessage message="login_failed" />}
       </button>
     </form>
   );
