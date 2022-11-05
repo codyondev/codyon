@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
-import { EMAIL_DOMAIN, PASSWORD_REGEXP } from '@lib/client';
+import { EMAIL_DOMAIN, PASSWORD_REGEXP, classname } from '@lib/client';
 import { Option } from '@models/form';
 
 interface SignUpFormType {
@@ -22,6 +22,7 @@ export default function SignUpForm() {
   const { register, watch, resetField, handleSubmit, formState } =
     useForm<SignUpFormType>({ mode: 'onBlur' });
   const [directly, setDirectly] = useState<boolean>(false);
+  const { errors, isDirty, isValid } = formState;
 
   const onChangeDirectly = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const isDirectly = e.target.value === 'directly';
@@ -46,14 +47,14 @@ export default function SignUpForm() {
           placeholder="이메일"
           register={register('email', { required: true })}
           value={watch('email')}
-          error={formState.errors.email}
+          error={errors.email}
         />
         {directly ? (
           <Input
             placeholder="직접입력"
             register={register('domain', { required: true })}
             value={watch('domain')}
-            error={formState.errors.domain}
+            error={errors.domain}
           />
         ) : (
           <Select
@@ -71,12 +72,18 @@ export default function SignUpForm() {
             pattern: { message: 'not_match', value: PASSWORD_REGEXP },
           })}
           value={watch('password')}
-          error={formState.errors.password}
+          error={errors.password}
         />
       </div>
       <button
         type="submit"
-        className="w-full text-center mt-8 py-5 rounded-md bg-gray-778 text-gray-88 text-[17px] font-semibold"
+        disabled={!isDirty || !isValid}
+        className={classname(
+          'w-full text-center mt-8 py-5 rounded-md text-[17px] font-semibold',
+          !isDirty || !isValid
+            ? 'bg-gray-778 text-gray-88'
+            : 'bg-darkmint text-white',
+        )}
       >
         이메일로 가입하기
       </button>
