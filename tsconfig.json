@@ -21,9 +21,10 @@
       "@components/*": ["components/*"],
       "@lib/*": ["lib/*"],
       "@hooks/*": ["hooks/*"],
-      "@model/*": ["model/*"],
+      "@models/*": ["models/*"],
       "@modules/*": ["modules/*"],
-      "@public/*": ["public/*"]
+      "@public/*": ["public/*"],
+      "@mocks/*": ["mocks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

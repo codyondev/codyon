@@ -6,3 +6,4 @@ _next
 node_modules
 .husky
 .github
+public/mockServiceWorker.js

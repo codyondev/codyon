@@ -1,7 +1,8 @@
-import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import React from 'react';
+
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = function () {
@@ -28,6 +29,7 @@ const Home: NextPage = function () {
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
+          <span data-testid="Home">Home</span>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>

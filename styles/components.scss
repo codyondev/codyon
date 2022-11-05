@@ -1,4 +1,13 @@
 @layer components {
+  .site-name {
+    @apply text-[30px];
+    background: linear-gradient(180deg, #888888 10.94%, #000000 55.73%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    line-height: 40px;
+  }
   .flip {
     @apply w-[360px] h-[230px];
     perspective: 1100px;

@@ -1,7 +1,8 @@
-import FlipCard from '@components/fashoin-card/flip-card';
-import { classname } from '@lib/client';
 import { NextPage } from 'next';
 import React, { useState } from 'react';
+
+import FlipCard from '@components/fashoin-card/flip-card';
+import { classname } from '@lib/client';
 
 const FasionCardWithUser: NextPage = function () {
   const [rotate, setRotate] = useState<boolean>(false);

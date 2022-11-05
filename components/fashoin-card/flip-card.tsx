@@ -1,8 +1,9 @@
-import { classname } from '@lib/client';
 import Image from 'next/image';
-import React, { useMemo } from 'react';
-import { QRCodeCanvas } from 'qrcode.react';
 import { useRouter } from 'next/router';
+import { QRCodeCanvas } from 'qrcode.react';
+import React, { useMemo } from 'react';
+
+import { classname } from '@lib/client';
 import profile from '@public/images/profile.jpg';
 
 interface FlipCardProps {
