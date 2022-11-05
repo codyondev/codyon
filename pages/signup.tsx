@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import { useForm } from 'react-hook-form';
 import Input from '@components/common/input';
 import Head from 'next/head';
 import CircleAlert from '@components/icons/circle-alert';
+import Select from '@components/common/select';
+import { Option } from 'models/form';
+import { EMAIL_DOMAIN } from '@lib/client';
 
 interface SignUpForm {
   email: string;
-  platform: string;
+  domain: string;
   password: string;
 }
 
+const options: Option[] = EMAIL_DOMAIN.map((domain) => ({
+  label: `@${domain}`,
+  value: domain,
+})).concat({ label: '직접 입력', value: 'directly' });
+
 const SignUp: NextPage = function () {
-  const { register, watch } = useForm<SignUpForm>();
+  const { register, watch, resetField } = useForm<SignUpForm>();
+  const [directly, setDirectly] = useState<boolean>(false);
+
+  const onChangeDirectly = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const isDirectly = e.target.value === 'directly';
+    setDirectly(isDirectly);
+    if (isDirectly) {
+      resetField('domain');
+    }
+  };
 
   return (
     <>
@@ -39,11 +56,20 @@ const SignUp: NextPage = function () {
                 register={register('email', { required: true })}
                 value={watch('email')}
               />
-              <Input
-                placeholder="@naver.com"
-                register={register('platform', { required: true })}
-                value={watch('platform')}
-              />
+              {directly ? (
+                <Input
+                  placeholder="직접입력"
+                  register={register('domain', { required: true })}
+                  value={watch('domain')}
+                />
+              ) : (
+                <Select
+                  register={register('domain')}
+                  options={options}
+                  onChangeDirectly={onChangeDirectly}
+                />
+              )}
+
               <Input
                 placeholder="비밀번호"
                 type="password"
@@ -61,8 +87,10 @@ const SignUp: NextPage = function () {
           </form>
         </section>
         <section className="mt-16 text-[12px] font-light">
-          <span className="ml-2 mr-1 font-bold">추천</span>비밀번호 필요없는
-          카톡으로 3초만에 시작하기
+          <p className="px-2">
+            <span className="mr-1 font-bold">추천</span>비밀번호 필요없는
+            카톡으로 3초만에 시작하기
+          </p>
           <button
             type="button"
             className="block mt-2 w-full text-center py-5 bg-kakao rounded-md text-[17px] font-semibold"

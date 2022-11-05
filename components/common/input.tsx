@@ -29,4 +29,5 @@ const Input = function ({
     />
   );
 };
-export default memo(Input);
+
+export default memo(Input, (prev, next) => prev.value === next.value);
