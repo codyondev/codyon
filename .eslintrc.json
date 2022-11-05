@@ -54,6 +54,10 @@
     {
       "files": ["lib/*.ts"],
       "rules": { "import/prefer-default-export": "off" }
+    },
+    {
+      "files": ["tests/**/*.test.tsx"],
+      "rules": { "react/react-in-jsx-scope": "off" }
     }
   ],
   "settings": {
