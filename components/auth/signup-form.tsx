@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
-import { EMAIL_DOMAIN } from '@lib/client';
+import { EMAIL_DOMAIN, PASSWORD_REGEXP } from '@lib/client';
 import { Option } from '@models/form';
 
 interface SignUpFormType {
@@ -19,18 +19,24 @@ const options: Option[] = EMAIL_DOMAIN.map((domain) => ({
 })).concat({ label: '직접 입력', value: 'directly' });
 
 export default function SignUpForm() {
-  const { register, watch, resetField } = useForm<SignUpFormType>();
+  const { register, watch, resetField, handleSubmit, formState } =
+    useForm<SignUpFormType>({ mode: 'onBlur' });
   const [directly, setDirectly] = useState<boolean>(false);
 
   const onChangeDirectly = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const isDirectly = e.target.value === 'directly';
     setDirectly(isDirectly);
     if (isDirectly) {
-      resetField('domain');
+      resetField('domain', { keepTouched: false });
     }
   };
+
+  const onSubmit = async (data: SignUpFormType) => {
+    console.log(data);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <CircleAlert className="inline" />{' '}
       <span className="align-middle text-[12px] text-gray-75">
         이메일 인증이 필요해요
@@ -40,12 +46,14 @@ export default function SignUpForm() {
           placeholder="이메일"
           register={register('email', { required: true })}
           value={watch('email')}
+          error={formState.errors.email}
         />
         {directly ? (
           <Input
             placeholder="직접입력"
             register={register('domain', { required: true })}
             value={watch('domain')}
+            error={formState.errors.domain}
           />
         ) : (
           <Select
@@ -54,13 +62,16 @@ export default function SignUpForm() {
             onChangeDirectly={onChangeDirectly}
           />
         )}
-
         <Input
           placeholder="비밀번호"
           type="password"
           overrideClassName="col-span-2"
-          register={register('password', { required: true })}
+          register={register('password', {
+            required: true,
+            pattern: { message: 'not_match', value: PASSWORD_REGEXP },
+          })}
           value={watch('password')}
+          error={formState.errors.password}
         />
       </div>
       <button
