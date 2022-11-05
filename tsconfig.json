@@ -21,7 +21,7 @@
       "@components/*": ["components/*"],
       "@lib/*": ["lib/*"],
       "@hooks/*": ["hooks/*"],
-      "@model/*": ["model/*"],
+      "@models/*": ["models/*"],
       "@modules/*": ["modules/*"],
       "@public/*": ["public/*"]
     }
