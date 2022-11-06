@@ -16,12 +16,16 @@ interface SignUpFormType {
   password: string;
 }
 
+interface SignUpFormProps {
+  setConfirm: (confirm: boolean) => void;
+}
+
 const options: Option[] = EMAIL_DOMAIN.map((domain) => ({
   label: `@${domain}`,
   value: domain,
 })).concat({ label: '직접 입력', value: 'directly' });
 
-export default function SignUpForm() {
+export default function SignUpForm({ setConfirm }: SignUpFormProps) {
   const [directly, setDirectly] = useState<boolean>(false);
   const [loginError, setLoginError] = useState<boolean>(false);
   const { register, watch, resetField, handleSubmit, formState, setError } =
@@ -29,12 +33,14 @@ export default function SignUpForm() {
   const { isLoading, mutate } = useMutation(signup<SignUpFormType, any>, {
     onSuccess: () => {
       setLoginError(true);
+      setConfirm(true);
     },
     onError: () => {
       setLoginError(true);
     },
   });
   const { errors, isDirty, isValid } = formState;
+  const isDisable = !isDirty || !isValid || isLoading;
 
   const onChangeDirectly = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const isDirectly = e.target.value === 'directly';
@@ -93,12 +99,10 @@ export default function SignUpForm() {
       </div>
       <button
         type="submit"
-        disabled={!isDirty || !isValid || isLoading}
+        disabled={isDisable}
         className={classname(
           'w-full text-center mt-8 py-5 rounded-md text-[17px] font-semibold relative',
-          !isDirty || !isValid
-            ? 'bg-gray-778 text-gray-88'
-            : 'bg-mint text-white',
+          isDisable ? 'bg-gray-778 text-gray-88' : 'bg-mint text-white',
         )}
       >
         이메일로 가입하기
