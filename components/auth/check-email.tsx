@@ -7,7 +7,7 @@ export default function CheckEmail() {
   return (
     <>
       <section className="mt-[4.7rem] flex flex-col items-center">
-        <Image src={Sent} width={100} height={100} placeholder="blur" />
+        <Image src={Sent} width={100} height={100} />
         <span className="mt-[0.625rem] text-[12px] text-gray-75">
           인증 메일을 보냈습니다.
         </span>

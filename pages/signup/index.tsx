@@ -17,9 +17,9 @@ const SignUp: NextPage = function () {
         <meta name="description" content="CodyOn 회원가입 페이지" />
       </Head>
       <AuthLayout>
-        <section>
+        <header>
           <CodyOnHeader />
-        </section>
+        </header>
         {confirm ? (
           <CheckEmail />
         ) : (
@@ -34,7 +34,7 @@ const SignUp: NextPage = function () {
               </p>
               <button
                 type="button"
-                className="block mt-2 w-full text-center py-5 bg-kakao rounded-md text-[17px] font-semibold"
+                className="block mt-2 w-full text-center button kakao"
               >
                 카카오로 시작하기
               </button>

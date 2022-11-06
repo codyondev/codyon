@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Confirm = function () {
+const CodyonHeader = function () {
   return (
     <>
       <h1 className="text-center font-medium site-name">CODY ON</h1>
@@ -11,4 +11,4 @@ const Confirm = function () {
   );
 };
 
-export default Confirm;
+export default CodyonHeader;
