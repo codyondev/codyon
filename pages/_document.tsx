@@ -32,7 +32,8 @@ class MyDocument extends Document {
           href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Quicksand:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
-        <body className="text-black max-w-mobile mx-auto min-h-[100vh] shadow-root text-root bg-white">
+        <link rel="stylesheet" type="text/css" />
+        <body className="text-black max-w-mobile mx-auto min-h-[100vh] shadow-root text-root font-default bg-white">
           <Main />
           <NextScript />
         </body>

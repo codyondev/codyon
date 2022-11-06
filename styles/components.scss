@@ -39,4 +39,13 @@
       padding-left: 20px;
     }
   }
+  .button {
+    @apply rounded-md py-[20px] w-full text-[17px] font-semibold;
+    &.primary {
+      @apply bg-mint text-white;
+    }
+    &.kakao {
+      @apply bg-kakao text-black;
+    }
+  }
 }

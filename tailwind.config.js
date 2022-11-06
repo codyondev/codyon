@@ -41,6 +41,9 @@ module.exports = {
       outlineColor: {
         ...colors,
       },
+      fontFamily: {
+        default: ['Pretendard Variable'],
+      },
     },
   },
   plugins: [],

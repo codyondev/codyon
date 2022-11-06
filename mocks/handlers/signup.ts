@@ -5,7 +5,7 @@ export const signup = (type?: 'error') => {
     if (type === 'error') {
       return res(ctx.status(400));
     }
-    return res(ctx.json({ result: 'ok' }));
+    return res(ctx.json({ result: 'hi' }));
   });
 };
 
