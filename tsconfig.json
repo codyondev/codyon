@@ -22,9 +22,12 @@
       "@lib/*": ["lib/*"],
       "@hooks/*": ["hooks/*"],
       "@models/*": ["models/*"],
-      "@modules/*": ["modules/*"],
+      "@mocks/*": ["mocks/*"],
+      "@styles/*": ["styles/*"],
       "@public/*": ["public/*"],
-      "@mocks/*": ["mocks/*"]
+      "@constants/*": ["constants/*"],
+      "@store/*": ["store/*"],
+      "@requests/*": ["requests/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
