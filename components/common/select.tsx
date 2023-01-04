@@ -1,7 +1,7 @@
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
-import { classname } from '@lib/client';
+import { cn } from '@lib/client';
 
 interface SelectProps {
   register: UseFormRegisterReturn;
@@ -19,7 +19,7 @@ const Select = function ({
   return (
     <select
       {...register}
-      className={classname(
+      className={cn(
         overrideClassName ?? '',
         'bg-white border-gray-29',
         'text-[14px] px-[1.4em] py-[1.1em] rounded-md text-dark outline-none focus:border-darkmint focus:border-1 placeholder:text-gray-88 border appearance-none',

@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
 
-import { classname } from '@lib/client';
+import { cn } from '@lib/client';
 
 import ErrorMessage from './error-message';
 
@@ -21,9 +21,9 @@ const Input = function ({
   ...rest
 }: InputProps) {
   return (
-    <div className={classname(overrideClassName ?? '', 'relative')}>
+    <div className={cn(overrideClassName ?? '', 'relative')}>
       <input
-        className={classname(
+        className={cn(
           value?.trim()
             ? 'bg-white border-gray-29'
             : 'bg-gray-778 border-gray-778',

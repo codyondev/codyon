@@ -1,4 +1,4 @@
-export function classname(...classnames: string[]) {
+export function cn(...classnames: string[]) {
   return classnames.join(' ');
 }
 
