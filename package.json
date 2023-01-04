@@ -15,7 +15,8 @@
     "test:ci": "jest --ci --passWithNoTests",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook  -s public"
+    "build-storybook": "build-storybook  -s public",
+    "chromatic": "npx chromatic --project-token=c68079b52dc3"
   },
   "dependencies": {
     "@prisma/client": "4.4.0",
@@ -53,6 +54,7 @@
     "autoprefixer": "^10.4.12",
     "babel-jest": "^29.2.2",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.14.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "8.25.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -80,5 +82,7 @@
   },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "codyon-nextjs@0.1.0"
 }
