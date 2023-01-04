@@ -1,10 +1,10 @@
 import { NextPage } from 'next';
 import React, { useState } from 'react';
 
-import FlipCard from '@components/fashoin-card/flip-card';
-import { classname } from '@lib/client';
+import FlipCard from '@components/fashion-card/flip-card';
+import { cn } from '@lib/client';
 
-const FasionCardWithUser: NextPage = function () {
+const FashionCardWithUser: NextPage = function () {
   const [rotate, setRotate] = useState<boolean>(false);
 
   const onToggleRotate = () => setRotate((prev) => !prev);
@@ -17,7 +17,7 @@ const FasionCardWithUser: NextPage = function () {
       <main>
         <FlipCard rotate={rotate} layoutClassName="mt-[150px] mx-auto" />
         <button
-          className={classname(
+          className={cn(
             'block mx-auto mt-[50px] w-[240px] h-[60px] rounded-full text-[#0C4CC4] transition-all duration-300',
             rotate ? 'bg-white border border-[#0C4CC3]' : 'bg-[#E4EBF8]',
           )}
@@ -39,4 +39,4 @@ const FasionCardWithUser: NextPage = function () {
   );
 };
 
-export default FasionCardWithUser;
+export default FashionCardWithUser;

@@ -13,7 +13,7 @@ const ConfirmEmail: NextPage = () => {
         <CodyonHeader />
       </header>
       <section className="mt-[4.7rem] flex flex-col items-center">
-        <Image src={Email} width={100} height={100} />
+        <Image src={Email} width={100} height={100} alt="회원가입 성공" />
         <span className="mt-[0.625rem] text-[12px] text-gray-75">
           회원가입 완료!
         </span>

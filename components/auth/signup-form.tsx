@@ -6,7 +6,7 @@ import ErrorMessage from '@components/common/error-message';
 import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
-import { EMAIL_DOMAIN, PASSWORD_REGEXP, classname } from '@lib/client';
+import { EMAIL_DOMAIN, PASSWORD_REGEXP, cn } from '@lib/client';
 import { signup } from '@lib/client/request';
 import { Option } from '@models/form';
 
@@ -100,7 +100,7 @@ export default function SignUpForm({ setConfirm }: SignUpFormProps) {
       <button
         type="submit"
         disabled={isDisable}
-        className={classname(
+        className={cn(
           'w-full text-center mt-8 py-5 rounded-md text-[17px] font-semibold relative',
           isDisable ? 'bg-gray-778 text-gray-88' : 'bg-mint text-white',
         )}
