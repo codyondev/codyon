@@ -19,6 +19,7 @@ module.exports = {
       boxShadow: {
         root: 'rgb(0 0 0 / 16%) 0px 0px 8px',
         card: '4px 10px 11px rgba(0, 0, 0, 0.06)',
+        gnb: '0px 0px 61px 12px rgba(134, 168, 175, 0.07)',
       },
       backgroundColor: {
         ...colors,

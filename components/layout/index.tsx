@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 
+import Footer from './footer';
 import Header from './header';
 
 interface LayoutProps {
@@ -17,8 +18,7 @@ function Layout({
       {showHeader && <Header />}
       <main>{children}</main>
       {/* GNB */}
-      {showGNB && <aside />}
-      <footer />
+      {showGNB && <Footer />}
     </>
   );
 }
