@@ -39,15 +39,16 @@ module.exports = {
       ...config.resolve.alias,
       '@pages': path.resolve(__dirname, '../pages'),
       '@components': path.resolve(__dirname, '../components'),
-      '@public': path.resolve(__dirname, '../assets'),
-      '@lib': path.resolve(__dirname, '../lib'),
+      '@public': path.resolve(__dirname, '../public'),
+      '@libs': path.resolve(__dirname, '../libs'),
       '@hooks': path.resolve(__dirname, '../hooks'),
       '@models': path.resolve(__dirname, '../models'),
       '@styles': path.resolve(__dirname, '../styles'),
-      '@constant': path.resolve(__dirname, '../constant'),
+      '@constants': path.resolve(__dirname, '../constants'),
       '@mocks': path.resolve(__dirname, '../mocks'),
       '@store': path.resolve(__dirname, '../store'),
       '@requests': path.resolve(__dirname, '../requests'),
+      '@types': path.resolve(__dirname, '../types'),
     };
 
     return config;

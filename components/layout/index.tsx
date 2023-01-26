@@ -1,20 +1,31 @@
 import React, { PropsWithChildren } from 'react';
 
+import Header from './header';
+
 interface LayoutProps {
   showGNB?: boolean;
   showHeader?: boolean;
 }
 
-function Layout({ children }: PropsWithChildren) {
+function Layout({
+  children,
+  showGNB,
+  showHeader,
+}: PropsWithChildren<LayoutProps>) {
   return (
     <>
-      <header />
+      {showHeader && <Header />}
       <main>{children}</main>
       {/* GNB */}
-      <aside />
+      {showGNB && <aside />}
       <footer />
     </>
   );
 }
 
 export default Layout;
+
+(Layout as React.FC<LayoutProps>).defaultProps = {
+  showGNB: true,
+  showHeader: true,
+};

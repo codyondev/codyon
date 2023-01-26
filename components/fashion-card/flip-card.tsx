@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { QRCodeCanvas } from 'qrcode.react';
 import React, { useMemo } from 'react';
 
-import { cn } from '@lib/client';
+import { cn } from '@libs/client';
 import profile from '@public/images/profile.jpg';
 
 interface FlipCardProps {

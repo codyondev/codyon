@@ -7,8 +7,8 @@ import Input from '@components/common/input';
 import Select from '@components/common/select';
 import CircleAlert from '@components/icons/circle-alert';
 import { EMAIL_DOMAIN, PASSWORD_REGEXP } from '@constants/index';
-import { cn } from '@lib/client';
-import { signup } from '@lib/client/request';
+import { cn } from '@libs/client';
+import { signup } from '@libs/client/request';
 import { Option } from '@models/form';
 
 interface SignUpFormType {

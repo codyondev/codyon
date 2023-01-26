@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
 
-import { cn } from '@lib/client';
+import { cn } from '@libs/client';
 
 import ErrorMessage from './error-message';
 
