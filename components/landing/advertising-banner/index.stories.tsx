@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import AdvertisingBanner from '.';
 
 export default {
-  title: 'Lading/Ad Banner Component',
+  title: 'Landing/Ad Banner Component',
   component: AdvertisingBanner,
 } as ComponentMeta<typeof AdvertisingBanner>;
 

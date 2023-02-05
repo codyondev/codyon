@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import RoleModel from '.';
 
 export default {
-  title: 'Lading/Role model Component',
+  title: 'Landing/Role model Component',
   component: RoleModel,
 } as ComponentMeta<typeof RoleModel>;
 

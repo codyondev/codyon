@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import AdvertisingBanner from '@components/landing/advertising-banner';
+import Brand from '@components/landing/brand';
 import RoleModel from '@components/landing/role-model';
 import Layout from '@components/layout';
 
@@ -87,45 +88,9 @@ const Home: NextPage = function () {
       <section className="p-layoutX mt-[15px]">
         <h2 className="font-bold text-lg">애정 브랜드</h2>
         <ul className="flex gap-x-[15px] mt-6 overflow-auto">
-          <li className="min-w-[150px]">
-            <div className="relative flex justify-center h-[80px] pb-[15px] rounded-md bg-white ">
-              <span className="absolute left-2 top-2 text-xs font-bold">
-                1위
-              </span>
-              <img
-                src="/images/wooyoungmi.svg"
-                alt="brand logo"
-                className="w-auto h-[30px] self-end"
-              />
-            </div>
-            <p className="mt-2 px-2 text-gray-75 text-xs">우영미</p>
-          </li>
-          <li className="min-w-[150px]">
-            <div className="relative flex justify-center h-[80px] pb-[15px] rounded-md bg-white ">
-              <span className="absolute left-2 top-2 text-xs font-bold">
-                1위
-              </span>
-              <img
-                src="/images/wooyoungmi.svg"
-                alt="brand logo"
-                className="w-auto h-[30px] self-end"
-              />
-            </div>
-            <p className="mt-2 px-2 text-gray-75 text-xs">와이 프로젝트</p>
-          </li>
-          <li className="min-w-[150px]">
-            <div className="relative flex justify-center h-[80px] pb-[15px] rounded-md bg-white ">
-              <span className="absolute left-2 top-2 text-xs font-bold">
-                1위
-              </span>
-              <img
-                src="/images/wooyoungmi.svg"
-                alt="brand logo"
-                className="w-auto h-[30px] self-end"
-              />
-            </div>
-            <p className="mt-2 px-2 text-gray-75 text-xs">우영미</p>
-          </li>
+          <Brand logo="/images/wooyoungmi.svg" name="우영미" rank={1} />
+          <Brand logo="/images/y-project.svg" name="와이프로젝트" rank={2} />
+          <Brand logo="/images/wooyoungmi.svg" name="우영미" rank={3} />
         </ul>
       </section>
     </Layout>
