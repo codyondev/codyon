@@ -1,8 +1,8 @@
 /* Tailwind */
-@import url(./components.scss);
-@import url(./utilities.scss);
+@import url(./components.css);
+@import url(./utilities.css);
 /* Fonts */
-@import url(./fonts.scss);
+@import url(./fonts.css);
 
 @tailwind base;
 @tailwind components;
