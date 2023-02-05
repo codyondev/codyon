@@ -26,16 +26,21 @@ const Home: NextPage = function () {
           thumbnail=""
         />
       </section>
-      <section className="p-layoutX mt-[15px]">
+      <section className="p-layoutX mt-[15px] overflow-x-auto">
         <h2 className="font-bold text-lg">패션 프로필</h2>
-        <article className="mt-6 rounded-md bg-[#242424] h-[150px] flex justify-center py-[10px]">
+        <article className="mt-6 rounded-md bg-[#242424] h-[150px] flex justify-center py-[10px] min-w-[360px]">
           <div>
-            <div className="w-[85px] h-[105px] overflow-hidden rounded-[100%] outline-dashed outline-1 outline-offset-2 outline-white">
-              <img src="/images/example-1.svg" alt="" />
+            <div className="flex flex-col items-center">
+              <div className="p-[2px] border border-dashed rounded-[100%]">
+                <div className="w-[85px] h-[105px] overflow-hidden rounded-[100%]">
+                  <img src="/images/example-1.svg" alt="" />
+                </div>
+              </div>
+              <p className="text-[10px] text-darkmint mt-[5px]">@yxrxm_</p>
             </div>
           </div>
-          <div>
-            <p className="w-[125px] text-[#CECECE] text-[10px] font-light leading-[13px] break-all">
+          <div className="self-end">
+            <p className="w-[125px] text-[#CECECE] text-[10px] font-light leading-[13px] break-all mb-[25px] ml-auto">
               날이 좋아서, 날이 좋지 않아서, 날이 적당해서. 모든 날에 화려하고
               싶었다.
             </p>
