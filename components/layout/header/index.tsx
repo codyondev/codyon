@@ -9,7 +9,9 @@ function Header() {
     <header className="h-[46px] bg-white border-b border-[#CECECE] flex items-center px-[15px]">
       <Link href="/" className="flex">
         <Image src={Logo} alt="Logo Icon" width={18} height={18} />
-        <span className="text-[13px] font-bold ml-[3px]">codi on</span>
+        <span className="text-[13px] font-bold ml-[3px] font-cocogoose">
+          codi on
+        </span>
       </Link>
     </header>
   );
