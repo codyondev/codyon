@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import CheckEmail from '@components/auth/check-email';
 import SignUpForm from '@components/auth/signup-form';
 import CodyOnHeader from '@components/common/codyon-header';
-import AuthLayout from '@components/layout/auth-layout';
+import AuthLayout from '@components/layout/auth';
 
 const SignUp: NextPage = function () {
   const [confirm, setConfirm] = useState<boolean>(false);

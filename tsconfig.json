@@ -19,7 +19,7 @@
     "paths": {
       "@pages/*": ["pages/*"],
       "@components/*": ["components/*"],
-      "@lib/*": ["lib/*"],
+      "@libs/*": ["libs/*"],
       "@hooks/*": ["hooks/*"],
       "@models/*": ["models/*"],
       "@mocks/*": ["mocks/*"],
@@ -27,7 +27,8 @@
       "@public/*": ["public/*"],
       "@constants/*": ["constants/*"],
       "@store/*": ["store/*"],
-      "@requests/*": ["requests/*"]
+      "@requests/*": ["requests/*"],
+      "@types/*": ["types/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

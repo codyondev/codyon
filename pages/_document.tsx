@@ -34,7 +34,7 @@ class MyDocument extends Document {
           rel="stylesheet"
         />
         <link rel="stylesheet" type="text/css" />
-        <body className="text-black max-w-mobile mx-auto min-h-[100vh] shadow-root text-root font-default bg-white">
+        <body className="text-black text-root font-default">
           <Main />
           <NextScript />
         </body>

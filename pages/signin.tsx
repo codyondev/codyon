@@ -6,7 +6,7 @@ import CheckEmail from '@components/auth/check-email';
 import SignInForm from '@components/auth/signin-form';
 import SignUpForm from '@components/auth/signup-form';
 import CodyOnHeader from '@components/common/codyon-header';
-import AuthLayout from '@components/layout/auth-layout';
+import AuthLayout from '@components/layout/auth';
 
 const SignIn: NextPage = function () {
   return (

@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import React, { useState } from 'react';
 
 import FlipCard from '@components/fashion-card/flip-card';
-import { cn } from '@lib/client';
+import { cn } from '@libs/client';
 
 const FashionCardWithUser: NextPage = function () {
   const [rotate, setRotate] = useState<boolean>(false);
