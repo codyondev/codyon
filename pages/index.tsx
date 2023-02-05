@@ -77,7 +77,7 @@ const Home: NextPage = function () {
             <img
               src="/images/ahepf.svg"
               alt="BiBi"
-              className="w-full object-cover"
+              className="w-full object-cover rounded-md"
             />
             <div className="px-[8px]">
               <span className="text-xs font-semibold">모델 ahepf</span>
@@ -97,7 +97,7 @@ const Home: NextPage = function () {
             <img
               src="/images/bibi.svg"
               alt="BiBi"
-              className="w-full object-cover"
+              className="w-full object-cover rounded-md"
             />
             <div className="px-[8px]">
               <span className="text-xs font-semibold">가수 BIBI</span>
@@ -113,6 +113,50 @@ const Home: NextPage = function () {
                 작곡까지 각볏한 비비...
               </p>
             </div>
+          </li>
+        </ul>
+      </section>
+      <section className="p-layoutX mt-[15px]">
+        <h2 className="font-bold text-lg">애정 브랜드</h2>
+        <ul className="flex gap-x-[15px] mt-6 overflow-auto">
+          <li className="min-w-[150px]">
+            <div className="relative flex justify-center h-[80px] pb-[15px] rounded-md bg-white ">
+              <span className="absolute left-2 top-2 text-xs font-bold">
+                1위
+              </span>
+              <img
+                src="/images/wooyoungmi.svg"
+                alt="brand logo"
+                className="w-auto h-[30px] self-end"
+              />
+            </div>
+            <p className="mt-2 px-2 text-gray-75 text-xs">우영미</p>
+          </li>
+          <li className="min-w-[150px]">
+            <div className="relative flex justify-center h-[80px] pb-[15px] rounded-md bg-white ">
+              <span className="absolute left-2 top-2 text-xs font-bold">
+                1위
+              </span>
+              <img
+                src="/images/wooyoungmi.svg"
+                alt="brand logo"
+                className="w-auto h-[30px] self-end"
+              />
+            </div>
+            <p className="mt-2 px-2 text-gray-75 text-xs">와이 프로젝트</p>
+          </li>
+          <li className="min-w-[150px]">
+            <div className="relative flex justify-center h-[80px] pb-[15px] rounded-md bg-white ">
+              <span className="absolute left-2 top-2 text-xs font-bold">
+                1위
+              </span>
+              <img
+                src="/images/wooyoungmi.svg"
+                alt="brand logo"
+                className="w-auto h-[30px] self-end"
+              />
+            </div>
+            <p className="mt-2 px-2 text-gray-75 text-xs">우영미</p>
           </li>
         </ul>
       </section>
