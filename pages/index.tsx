@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import AdvertisingBanner from '@components/landing/advertising-banner';
 import Layout from '@components/layout';
 
 const Home: NextPage = function () {
@@ -17,16 +18,11 @@ const Home: NextPage = function () {
         </Link>
       </nav>
       <section className="bg-white p-layout mt-5">
-        <article className="bg-[#E3EEED] h-[80px] rounded-md flex items-center px-5 justify-between">
-          {/* 이미지로 교체 예정 */}
-          <div />
-          <p className="text-[10px]">
-            <strong className="text-xs block">
-              빼곡히 잡힌 연말 약속에 입을 옷이 걱정된다면
-            </strong>
-            무신사에서 연말룩 첫 구매시 50% 할인
-          </p>
-        </article>
+        <AdvertisingBanner
+          title="빼곡히 잡힌 연말 약속에 입을 옷이 걱정된다면"
+          description="무신사에서 연말룩 첫 구매시 50% 할인"
+          thumbnail=""
+        />
       </section>
       <section className="p-layoutX mt-[15px]">
         <h2 className="font-bold text-lg">패션 프로필</h2>
