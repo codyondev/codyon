@@ -45,6 +45,7 @@ module.exports = {
       fontFamily: {
         default: ['Pretendard Variable'],
         cocogoose: ['COCOGOOSE Regular'],
+        'rock-salt': ['Rock Salt', 'cursive'],
       },
       padding: {
         layout: '15px 15px',

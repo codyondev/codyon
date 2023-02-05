@@ -28,7 +28,10 @@ const Home: NextPage = function () {
       </section>
       <section className="p-layoutX mt-[15px] overflow-x-auto">
         <h2 className="font-bold text-lg">패션 프로필</h2>
-        <article className="mt-6 rounded-md bg-[#242424] h-[150px] flex justify-center py-[10px] min-w-[360px]">
+        <article className="relative mt-6 rounded-md bg-[#242424] h-[150px] flex justify-center py-[10px] min-w-[360px]">
+          <h3 className="absolute top-2 left-[50%] translate-x-[-50%] text-darkmint font-rock-salt text-[40px]">
+            FEMG
+          </h3>
           <div>
             <div className="flex flex-col items-center">
               <div className="p-[2px] border border-dashed rounded-[100%]">
@@ -40,7 +43,15 @@ const Home: NextPage = function () {
             </div>
           </div>
           <div className="self-end">
-            <p className="w-[125px] text-[#CECECE] text-[10px] font-light leading-[13px] break-all mb-[25px] ml-auto">
+            <p
+              className="w-[125px] text-[#CECECE] text-[10px] font-light leading-[13px] break-all mb-[20px] ml-auto"
+              style={{
+                display: '-webkit-box',
+                overflow: 'hidden',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+              }}
+            >
               날이 좋아서, 날이 좋지 않아서, 날이 적당해서. 모든 날에 화려하고
               싶었다.
             </p>
