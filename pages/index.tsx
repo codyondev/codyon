@@ -93,6 +93,14 @@ const Home: NextPage = function () {
           <Brand logo="/images/wooyoungmi.svg" name="우영미" rank={3} />
         </ul>
       </section>
+      <section className="p-layoutX mt-[15px]">
+        <h2 className="font-bold text-lg">옷장</h2>
+        <ul className="grid gap-[15px] mt-6 grid-cols-2">
+          {Array.from({ length: 6 }, (_, i) => i).map((order) => (
+            <li className="rounded-md h-[150px] bg-white" key={order} />
+          ))}
+        </ul>
+      </section>
     </Layout>
   );
 };
