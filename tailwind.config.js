@@ -44,7 +44,7 @@ module.exports = {
       },
       fontFamily: {
         default: ['Pretendard Variable'],
-        cocogoose: ['COCOGIISE'],
+        cocogoose: ['COCOGOOSE Regular'],
       },
     },
   },
