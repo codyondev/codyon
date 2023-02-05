@@ -46,6 +46,11 @@ module.exports = {
         default: ['Pretendard Variable'],
         cocogoose: ['COCOGOOSE Regular'],
       },
+      padding: {
+        layout: '15px 15px',
+        layoutX: '0 15px',
+        layoutY: '15px 0',
+      },
     },
   },
   plugins: [],
