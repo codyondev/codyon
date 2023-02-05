@@ -8,7 +8,7 @@ import {
 } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import '../styles/globals.scss';
+import '../styles/globals.css';
 
 function MyApp({
   Component,

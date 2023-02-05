@@ -21,13 +21,15 @@
   "dependencies": {
     "@prisma/client": "4.4.0",
     "axios": "^1.1.3",
+    "D": "^1.0.0",
     "next": "^13.1.1",
     "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.39.1",
     "react-query": "^3.39.2",
-    "sass": "^1.58.0"
+    "sass": "^1.58.0",
+    "storybook-addon-sass-postcss": "^0.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
