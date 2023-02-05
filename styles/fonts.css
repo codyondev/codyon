@@ -4,5 +4,5 @@
   font-style: normal;
   font-weight: normal;
   src: local('COCOGOOSE Regular'),
-    url('../public/fonts/cocogoose/cocogoose_trial.woff') format('woff');
+    url('/fonts/cocogoose/cocogoose_trial.woff') format('woff');
 }

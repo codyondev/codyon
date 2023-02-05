@@ -9,7 +9,7 @@ import SearchIcon from '@components/icons/search';
 
 function Footer() {
   return (
-    <footer className="absolute bottom-0 left-0 w-full flex justify-between items-center h-[60px] px-[45px] bg-white shadow-gnb rounded-t-[25px]">
+    <footer className="fixed bottom-0 translate-x-[-50%] left-[50%] max-w-mobile w-full flex justify-between items-center h-[60px] px-[45px] bg-white shadow-gnb rounded-t-[25px]">
       <Link href="/">
         <HomeIcon />
       </Link>

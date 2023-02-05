@@ -33,7 +33,10 @@ class MyDocument extends Document {
           href="https://fonts.googleapis.com/css2?family=Purple+Purse&family=Quicksand:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" type="text/css" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+          rel="stylesheet"
+        />
         <body className="text-black text-root font-default">
           <Main />
           <NextScript />

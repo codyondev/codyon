@@ -14,7 +14,7 @@ function Layout({
   showHeader,
 }: PropsWithChildren<LayoutProps>) {
   return (
-    <div className="relative max-w-mobile mx-auto min-h-[100vh] shadow-root bg-gray-778">
+    <div className="relative max-w-mobile mx-auto shadow-root bg-gray-778 min-h-[100vh] max-h-[100vh] overflow-auto pb-[80px]">
       {showHeader && <Header />}
       <main className="bg-gray-778">{children}</main>
       {/* GNB */}
