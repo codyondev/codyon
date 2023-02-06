@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 import React from 'react';
 
 import Layout from '@components/layout';
@@ -22,12 +23,13 @@ const Semg: NextPage = () => {
           <img src="/images/chain.svg" alt="공유 아이콘" />
         </button>
       </div>
-      <button
-        className="text-white bg-darkmint h-[70px] min-w-[285px] rounded-[50px] font-semibold mt-6 block mx-auto shadow-button"
+      <Link
+        href="/semg/test"
+        className="flex justify-center items-center text-white bg-darkmint h-[70px] min-w-[285px] rounded-[50px] font-semibold mt-6 mx-auto shadow-button"
         type="button"
       >
         <span className="mr-5">👀</span>테스트 시작하기
-      </button>
+      </Link>
     </Layout>
   );
 };
