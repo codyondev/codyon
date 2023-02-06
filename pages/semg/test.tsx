@@ -19,17 +19,17 @@ const SemgTest: NextPage = () => {
         <p className="mt-2 mx-auto font-medium text-[10px] w-fit text-gray-75">
           Tip | 너무 오래 고민하지 말고 바로 떠오르는 답을 고르는 게 좋아요!
         </p>
-        <ul className="mt-6 flex mx-auto flex-col gap-y-5">
-          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold">
+        <ul className="mt-6 flex mx-auto flex-col gap-y-5 transition-all">
+          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold border border-darkmint bg-mint cursor-pointer">
             <span className="text-4xl mr-7">❤️‍🔥</span>매우 그런 편이다
           </li>
-          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold">
+          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold cursor-pointer">
             <span className="text-4xl mr-7">❤️</span>조금 그런 편이다
           </li>
-          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold">
+          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold cursor-pointer">
             <span className="text-4xl mr-7">❤️‍🩹</span>조금 그렇지 않은 편이다
           </li>
-          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold">
+          <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold cursor-pointer">
             <span className="text-4xl mr-7">💔</span>매우 그렇지 않은 편이다
           </li>
         </ul>
