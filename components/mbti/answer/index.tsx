@@ -31,8 +31,8 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
         },
         entered: {
           opacity: 1,
-          transform: 'translateX(0%)',
-          transitionDelay: '0ms',
+          transform: undefined,
+          transitionDelay: undefined,
         },
         exiting: {
           opacity: 0,
@@ -42,7 +42,7 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
         exited: {
           opacity: 0,
           transform: 'translateX(101%)',
-          transitionDelay: '0ms',
+          transitionDelay: undefined,
         },
       }),
       [index],
@@ -70,7 +70,7 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
             }}
             htmlFor={text}
           >
-            <span className={styles.text}>{icon}</span>
+            <span className={styles.icon}>{icon}</span>
             {text}
           </label>
         </li>

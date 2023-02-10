@@ -3,9 +3,9 @@
   min-height: 60px;
   border-radius: 50px;
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-4px);
   }
 }
-.text {
-  @apply text-4xl mr-7;
+.icon {
+  @apply text-3xl mr-7;
 }

@@ -1,5 +1,10 @@
 import { NextPage } from 'next';
-import React, { ChangeEventHandler, useEffect, useState } from 'react';
+import React, {
+  ChangeEventHandler,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 
 import Layout from '@components/layout';
 import Answer from '@components/mbti/answer';
@@ -8,9 +13,9 @@ const SemgTest: NextPage = () => {
   const [on, setOn] = useState<boolean>(false);
   const [timer, setTimer] = useState<ReturnType<typeof setTimeout>>();
 
-  const onSelect: ChangeEventHandler<HTMLInputElement> = (e) => {
+  const onSelect: ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
     setTimer(setTimeout(() => setOn(false), 300));
-  };
+  }, []);
 
   useEffect(() => {
     setOn(true);
