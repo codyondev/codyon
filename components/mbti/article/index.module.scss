@@ -1,0 +1,11 @@
+.articleWrapper {
+  @apply bg-white shadow-button px-[35px] min-h-[180px] py-5 transition-all duration-300;
+}
+
+.title {
+  @apply block mx-auto w-fit text-2xl text-darkmint font-semibold;
+}
+
+.text {
+  @apply font-semibold leading-5 text-center text-lg mt-5;
+}
