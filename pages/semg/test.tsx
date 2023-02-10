@@ -3,20 +3,21 @@ import React, { CSSProperties, useEffect, useState } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
 import Layout from '@components/layout';
+import Answer from '@components/mbti/answer';
 
 const duration = 300;
 
 const defaultStyle: CSSProperties = {
   transition: `all ${duration}ms ease-in-out`,
   opacity: 0,
-  transform: 'translateY(30%)',
+  transform: 'translateX(30%)',
 };
 
 const transitionStyles: Partial<Record<TransitionStatus, CSSProperties>> = {
-  entering: { opacity: 1, transform: 'translateY(0%)' },
-  entered: { opacity: 1, transform: 'translateY(0%)' },
-  exiting: { opacity: 0 },
-  exited: { opacity: 0 },
+  entering: { opacity: 1, transform: 'translateX(0%)' },
+  entered: { opacity: 1, transform: 'translateX(0%)' },
+  exiting: { opacity: 0, transform: 'translateX(-101%)' },
+  exited: { opacity: 0, transform: 'translateX(-101%)' },
 };
 
 const SemgTest: NextPage = () => {
@@ -24,6 +25,10 @@ const SemgTest: NextPage = () => {
 
   useEffect(() => {
     setOn(true);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => setOn(false), 2000);
   }, []);
 
   return (
@@ -41,30 +46,17 @@ const SemgTest: NextPage = () => {
         <p className="mt-2 mx-auto font-medium text-[10px] w-fit text-gray-75">
           Tip | 너무 오래 고민하지 말고 바로 떠오르는 답을 고르는 게 좋아요!
         </p>
-        <Transition timeout={300} in={on}>
-          {(state) => (
-            <ul
-              className="mt-6 flex mx-auto flex-col gap-y-5 transition-all"
-              style={{
-                ...defaultStyle,
-                ...transitionStyles[state],
-              }}
-            >
-              <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold border border-darkmint bg-mint cursor-pointer">
-                <span className="text-4xl mr-7">❤️‍🔥</span>매우 그런 편이다
-              </li>
-              <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold cursor-pointer">
-                <span className="text-4xl mr-7">❤️</span>조금 그런 편이다
-              </li>
-              <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold cursor-pointer">
-                <span className="text-4xl mr-7">❤️‍🩹</span>조금 그렇지 않은 편이다
-              </li>
-              <li className="bg-white min-h-[70px] shadow-button rounded-[50px] flex items-center px-[48px] font-semibold cursor-pointer">
-                <span className="text-4xl mr-7">💔</span>매우 그렇지 않은 편이다
-              </li>
-            </ul>
-          )}
-        </Transition>
+
+        <ul className="mt-6 flex mx-auto flex-col gap-y-5 transition-all">
+          {[
+            { icon: '❤️‍🔥', text: '매우 그런 편이다' },
+            { icon: '❤️', text: '조금 그런 편이다' },
+            { icon: '❤️‍🩹', text: '조금 그렇지 않은 편이다' },
+            { icon: '💔', text: '매우 그렇지 않은 편이다' },
+          ].map((item, index) => (
+            <Answer key={item.text} index={index} {...item} current={on} />
+          ))}
+        </ul>
       </section>
     </Layout>
   );
