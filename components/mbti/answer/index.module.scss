@@ -1,5 +1,5 @@
 .answerWrapper {
-  @apply bg-white shadow-button flex items-center px-[48px] font-semibold cursor-pointer border;
+  @apply bg-white shadow-button flex items-center px-[48px] font-semibold cursor-pointer border will-change-transform;
   min-height: 60px;
   border-radius: 50px;
   &:hover {

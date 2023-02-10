@@ -4,8 +4,10 @@
 
 .title {
   @apply block mx-auto w-fit text-2xl text-darkmint font-semibold;
+  will-change: opacity;
 }
 
 .text {
   @apply font-semibold leading-5 text-center text-lg mt-5;
+  will-change: opacity;
 }

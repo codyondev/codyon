@@ -10,7 +10,7 @@ const duration = 300;
 const defaultStyle: CSSProperties = {
   transition: `all ${duration}ms ease-out`,
   opacity: 0,
-  transform: 'translateX(101%)',
+  transform: 'translate3d(101%, 0, 0)',
 };
 
 interface AnswerProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -26,7 +26,7 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
       () => ({
         entering: {
           opacity: 1,
-          transform: 'translateX(0%)',
+          transform: 'translate3d(0, 0, 0)',
           transitionDelay: `${index * 50}ms`,
         },
         entered: {
@@ -36,12 +36,12 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
         },
         exiting: {
           opacity: 0,
-          transform: 'translateX(-101%)',
+          transform: 'translate3d(-101%, 0, 0)',
           transitionDelay: `${index * 50}ms`,
         },
         exited: {
           opacity: 0,
-          transform: 'translateX(101%)',
+          transform: 'translate3d(101%, 0, 0)',
           transitionDelay: undefined,
         },
       }),
