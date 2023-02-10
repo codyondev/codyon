@@ -13,4 +13,8 @@ const Template: ComponentStory<typeof Answer> = (args) => <Answer {...args} />;
 
 export const Primary = Template.bind({});
 
-Primary.args = {};
+Primary.args = {
+  ...{ icon: '❤️‍🔥', text: '매우 그런 편이다' },
+  current: true,
+  index: 1,
+};

@@ -1,0 +1,11 @@
+.answerWrapper {
+  @apply bg-white shadow-button flex items-center px-[48px] font-semibold cursor-pointer border;
+  min-height: 60px;
+  border-radius: 50px;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+.text {
+  @apply text-4xl mr-7;
+}
