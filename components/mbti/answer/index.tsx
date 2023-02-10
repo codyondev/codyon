@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useMemo } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
 
 import { cn } from '@libs/client';
@@ -10,14 +10,7 @@ const duration = 300;
 const defaultStyle: CSSProperties = {
   transition: `all ${duration}ms ease-out`,
   opacity: 0,
-  transform: 'translateX(30%)',
-};
-
-const transitionStyles: Partial<Record<TransitionStatus, CSSProperties>> = {
-  entering: { opacity: 1, transform: 'translateX(0%)' },
-  entered: { opacity: 1, transform: 'translateX(0%)' },
-  exiting: { opacity: 0, transform: 'translateX(-101%)' },
-  exited: { opacity: 0, transform: 'translateX(-101%)' },
+  transform: 'translateX(101%)',
 };
 
 interface AnswerProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -28,8 +21,35 @@ interface AnswerProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
+  const transitionStyles: Partial<Record<TransitionStatus, CSSProperties>> =
+    useMemo(
+      () => ({
+        entering: {
+          opacity: 1,
+          transform: 'translateX(0%)',
+          transitionDelay: `${index * 50}ms`,
+        },
+        entered: {
+          opacity: 1,
+          transform: 'translateX(0%)',
+          transitionDelay: '0ms',
+        },
+        exiting: {
+          opacity: 0,
+          transform: 'translateX(-101%)',
+          transitionDelay: `${index * 50}ms`,
+        },
+        exited: {
+          opacity: 0,
+          transform: 'translateX(101%)',
+          transitionDelay: '0ms',
+        },
+      }),
+      [index],
+    );
+
   return (
-    <Transition timeout={300} in={current}>
+    <Transition timeout={300} in={current} unmountOnExit mountOnEnter>
       {(state) => (
         <li>
           <input
@@ -47,7 +67,6 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
             style={{
               ...defaultStyle,
               ...transitionStyles[state],
-              transitionDelay: `${index * 50}ms`,
             }}
             htmlFor={text}
           >

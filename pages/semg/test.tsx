@@ -1,20 +1,27 @@
 import { NextPage } from 'next';
-import React, { CSSProperties, useEffect, useState } from 'react';
-import { Transition, TransitionStatus } from 'react-transition-group';
+import React, { ChangeEventHandler, useEffect, useState } from 'react';
 
 import Layout from '@components/layout';
 import Answer from '@components/mbti/answer';
 
 const SemgTest: NextPage = () => {
   const [on, setOn] = useState<boolean>(false);
+  const [timer, setTimer] = useState<ReturnType<typeof setTimeout>>();
+
+  const onSelect: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setTimer(setTimeout(() => setOn(false), 300));
+  };
 
   useEffect(() => {
     setOn(true);
   }, []);
 
-  // useEffect(() => {
-  //   setTimeout(() => setOn(false), 2000);
-  // }, []);
+  useEffect(() => {
+    if (!on) setTimer(setTimeout(() => setOn(true), 500));
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [on]);
 
   return (
     <Layout showGNB={false}>
@@ -38,7 +45,14 @@ const SemgTest: NextPage = () => {
             { icon: '❤️‍🩹', text: '조금 그렇지 않은 편이다' },
             { icon: '💔', text: '매우 그렇지 않은 편이다' },
           ].map((item, index) => (
-            <Answer key={item.text} index={index} {...item} current={on} />
+            <Answer
+              key={item.text}
+              index={index}
+              {...item}
+              current={on}
+              onChange={onSelect}
+              value={item.text}
+            />
           ))}
         </ul>
       </section>
