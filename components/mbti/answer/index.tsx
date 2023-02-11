@@ -49,7 +49,7 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
     );
 
   return (
-    <Transition timeout={300} in={current} unmountOnExit mountOnEnter>
+    <Transition timeout={300} in={current} unmountOnExit>
       {(state) => (
         <li>
           <input
