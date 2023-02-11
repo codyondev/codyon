@@ -29,14 +29,22 @@ interface ArticleProps {
   order: number;
   text: string;
   on: boolean;
+  thumbnail?: string;
 }
 
-function Article({ order, text, on }: ArticleProps) {
+function Article({ order, text, on, thumbnail }: ArticleProps) {
   return (
     <div className={styles.articleWrapper}>
       <Transition timeout={duration} in={on} unmountOnExit mountOnEnter>
         {(state) => (
           <>
+            {thumbnail && (
+              <img
+                src={thumbnail}
+                alt={`${order}번째 문제 썸네일`}
+                className="max-h-[190px] mx-auto mb-[10px]"
+              />
+            )}
             <span
               className={styles.title}
               style={{ ...defaultStyle, ...transitionStyles[state] }}
