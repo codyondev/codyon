@@ -1,10 +1,37 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Layout from '@components/layout';
+import { DefaultFeedSettings } from '@custom-types/kakao';
 
 const Semg: NextPage = () => {
+  useEffect(() => {
+    if (!window.Kakao.isInitialized()) return;
+    window.Kakao.Share.createDefaultButton<DefaultFeedSettings>({
+      container: '#kakaotalk-sharing-btn',
+      objectType: 'feed',
+      content: {
+        title: '패션 MBTI 테스트',
+        description: '당신의 패션 MBTI 유형을 확인해보세요',
+        imageUrl: 'https://www.codion.site/images/main.png',
+        link: {
+          mobileWebUrl: 'https://www.codion.site/semg',
+          webUrl: 'https://www.codion.site/semg',
+        },
+      },
+      buttons: [
+        {
+          title: '웹으로 이동',
+          link: {
+            mobileWebUrl: 'https://www.codion.site/semg',
+            webUrl: 'https://www.codion.site/semg',
+          },
+        },
+      ],
+    });
+  }, []);
+
   return (
     <Layout showGNB={false}>
       <img
@@ -16,7 +43,7 @@ const Semg: NextPage = () => {
         현재 총 20,230,114명이 참여했어요.
       </p>
       <div className="mt-6 flex justify-center gap-12">
-        <button type="button">
+        <button type="button" id="kakaotalk-sharing-btn">
           <img src="/images/kakao.svg" alt="카카오 아이콘" />
         </button>
         <button type="button">
