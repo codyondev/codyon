@@ -16,16 +16,16 @@ const Semg: NextPage = () => {
         description: '당신의 패션 MBTI 유형을 확인해보세요',
         imageUrl: 'https://www.codion.site/images/main.png',
         link: {
-          mobileWebUrl: 'https://www.codion.site/semg',
-          webUrl: 'https://www.codion.site/semg',
+          mobileWebUrl: 'https://www.codyon.site/semg',
+          webUrl: 'https://www.codyon.site/semg',
         },
       },
       buttons: [
         {
           title: '웹으로 이동',
           link: {
-            mobileWebUrl: 'https://www.codion.site/semg',
-            webUrl: 'https://www.codion.site/semg',
+            mobileWebUrl: 'https://www.codyon.site/semg',
+            webUrl: 'https://www.codyon.site/semg',
           },
         },
       ],
