@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { signIn, useSession } from 'next-auth/react';
 import Head from 'next/head';
 import React, { useState } from 'react';
 
@@ -9,6 +10,7 @@ import AuthLayout from '@components/layout/auth';
 
 const SignUp: NextPage = function () {
   const [confirm, setConfirm] = useState<boolean>(false);
+  const { data: session } = useSession();
 
   return (
     <>
@@ -35,9 +37,17 @@ const SignUp: NextPage = function () {
               <button
                 type="button"
                 className="block mt-2 w-full text-center button kakao"
+                onClick={() => {
+                  signIn('kakao');
+                }}
               >
                 카카오로 시작하기
               </button>
+              <div className="to be deleted class">
+                {session
+                  ? `로그인 정보 : ${JSON.stringify(session.user)}`
+                  : '로그인된 상태가 아닙니다'}
+              </div>
             </section>
           </>
         )}

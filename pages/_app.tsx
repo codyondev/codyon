@@ -1,3 +1,5 @@
+import { DefaultSession } from 'next-auth';
+import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import React, { useEffect, useState } from 'react';
 import {
@@ -13,7 +15,7 @@ import '../styles/globals.css';
 function MyApp({
   Component,
   pageProps,
-}: AppProps<{ dehydratedState: DehydratedState }>) {
+}: AppProps<{ dehydratedState: DehydratedState; session: DefaultSession }>) {
   const [queryClient] = useState(new QueryClient());
 
   useEffect(() => {
@@ -24,7 +26,9 @@ function MyApp({
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps?.dehydratedState}>
-        <Component {...pageProps} />
+        <SessionProvider session={pageProps.session}>
+          <Component {...pageProps} />
+        </SessionProvider>
         <ReactQueryDevtools />
       </Hydrate>
     </QueryClientProvider>
