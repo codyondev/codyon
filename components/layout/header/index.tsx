@@ -10,7 +10,7 @@ function Header() {
       <Link href="/" className="flex">
         <Image src={Logo} alt="Logo Icon" width={18} height={18} />
         <span className="text-[13px] font-bold ml-[3px] font-cocogoose">
-          codi on
+          cody on
         </span>
       </Link>
     </header>
