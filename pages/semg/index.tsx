@@ -14,7 +14,7 @@ const Semg: NextPage = () => {
       content: {
         title: '패션 MBTI 테스트',
         description: '당신의 패션 MBTI 유형을 확인해보세요',
-        imageUrl: 'https://www.codion.site/images/main.png',
+        imageUrl: 'https://www.codyon.site/images/main.png',
         link: {
           mobileWebUrl: 'https://www.codyon.site/semg',
           webUrl: 'https://www.codyon.site/semg',
