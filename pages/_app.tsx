@@ -10,6 +10,8 @@ import {
 } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
+import wrapper from '@store/index';
+
 import '../styles/globals.css';
 
 function MyApp({
@@ -35,4 +37,4 @@ function MyApp({
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
