@@ -1,13 +1,18 @@
 import { createWrapper } from 'next-redux-wrapper';
 import { useDispatch } from 'react-redux';
 
-import { Reducer, configureStore } from '@reduxjs/toolkit';
+import {
+  AnyAction,
+  CombinedState,
+  Reducer,
+  configureStore,
+} from '@reduxjs/toolkit';
 
-import rootReducer from './reducers';
+import rootReducer, { RootState } from './reducers';
 
 const makeStore = () =>
   configureStore({
-    reducer: rootReducer,
+    reducer: rootReducer as Reducer<CombinedState<RootState>, AnyAction>,
     middleware: (getDefaultMiddleware) => {
       //   if (process.env.NODE_ENV === 'development') {
       //   }

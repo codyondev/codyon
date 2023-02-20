@@ -2,15 +2,20 @@ import { HYDRATE } from 'next-redux-wrapper';
 
 import { AnyAction, combineReducers } from '@reduxjs/toolkit';
 
-interface RootState {}
+import answerSlice, { MbtiInitialState } from './mbti';
+
+export interface RootState {
+  mbti: MbtiInitialState;
+}
 
 const rootReducer = (state: RootState, action: AnyAction) => {
   if (action.type === HYDRATE) {
     return { ...state, ...action.payload };
   }
-  return combineReducers({
-    // 해당 부분에 리듀서(slice) 추가
-  })(state, action);
+  return combineReducers<RootState>({ mbti: answerSlice.reducer })(
+    state,
+    action,
+  );
 };
 
 export default rootReducer;
