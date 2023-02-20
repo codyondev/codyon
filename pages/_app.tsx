@@ -1,7 +1,7 @@
 import { DefaultSession } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   DehydratedState,
   Hydrate,
@@ -9,6 +9,9 @@ import {
   QueryClientProvider,
 } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import 'react-toastify/ReactToastify.css';
+
+import wrapper from '@store/index';
 
 import '../styles/globals.css';
 
@@ -17,11 +20,6 @@ function MyApp({
   pageProps,
 }: AppProps<{ dehydratedState: DehydratedState; session: DefaultSession }>) {
   const [queryClient] = useState(new QueryClient());
-
-  useEffect(() => {
-    if (window.Kakao.isInitialized()) return;
-    window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_SCRIPT_KEY ?? '');
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -35,4 +33,4 @@ function MyApp({
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

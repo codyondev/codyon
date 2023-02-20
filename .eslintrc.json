@@ -76,6 +76,12 @@
         "import/no-extraneous-dependencies": "off",
         "global-require": "off"
       }
+    },
+    {
+      "files": ["store/reducers/*.ts"],
+      "rules": {
+        "no-param-reassign": "off"
+      }
     }
   ],
   "settings": {
