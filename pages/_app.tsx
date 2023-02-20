@@ -33,7 +33,7 @@ function MyApp({
         crossOrigin="anonymous"
         strategy="lazyOnload"
         onLoad={() =>
-          window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_SCRIPT_KEY ?? '')
+          window.Kakao?.init(process.env.NEXT_PUBLIC_KAKAO_SCRIPT_KEY ?? '')
         }
       />
       <QueryClientProvider client={queryClient}>

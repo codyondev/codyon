@@ -38,11 +38,9 @@ class MyDocument extends Document {
           rel="stylesheet"
         />
         <script
-          id="kakao-sdk"
+          src="https://buttr.dev/butter.js"
+          data-site-id="zwwygcafur"
           async
-          src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.js"
-          integrity="sha384-OfbOqPoV2XcfZpqrLgqYCNSNBJW4JU/lLrtKk0cpkWvCrDRotHaQ9SSMGeP7u8NB"
-          crossOrigin="anonymous"
         />
         <body className="text-black text-root font-default">
           <Main />

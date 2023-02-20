@@ -19,7 +19,7 @@ const initialSettings: Partial<DefaultFeedSettings> = {
 const useKakaoFeedShare = (container?: `#${string}`) => {
   useEffect(() => {
     if (!window.Kakao?.isInitialized()) {
-      window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_SCRIPT_KEY ?? '');
+      window.Kakao?.init(process.env.NEXT_PUBLIC_KAKAO_SCRIPT_KEY ?? '');
     }
   }, []);
 
