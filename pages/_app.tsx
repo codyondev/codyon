@@ -9,6 +9,7 @@ import {
   QueryClientProvider,
 } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import 'react-toastify/ReactToastify.css';
 
 import wrapper from '@store/index';
 

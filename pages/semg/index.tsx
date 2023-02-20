@@ -1,6 +1,8 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { ToastContainer, toast } from 'react-toastify';
 
 import Layout from '@components/layout';
 import useKakaoFeedShare from '@hooks/useKakaoFeedShare';
@@ -37,9 +39,16 @@ const Semg: NextPage = () => {
         >
           <img src="/images/kakao.svg" alt="카카오 아이콘" />
         </button>
-        <button type="button">
-          <img src="/images/chain.svg" alt="공유 아이콘" />
-        </button>
+        <CopyToClipboard
+          text="https://www.codyon.site/semg"
+          onCopy={(_, result) =>
+            result && toast.success('링크를 클립보드에 복사했습니다.')
+          }
+        >
+          <button type="button">
+            <img src="/images/chain.svg" alt="공유 아이콘" />
+          </button>
+        </CopyToClipboard>
       </div>
       <Link
         href="/semg/test"
@@ -48,6 +57,7 @@ const Semg: NextPage = () => {
       >
         <span className="mr-5">👀</span>테스트 시작하기
       </Link>
+      <ToastContainer hideProgressBar position="top-center" />
     </Layout>
   );
 };
