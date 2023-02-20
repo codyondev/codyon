@@ -1,6 +1,8 @@
 import { DefaultSession } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import Script from 'next/script';
 import React, { useState } from 'react';
 import {
   DehydratedState,
@@ -22,14 +24,27 @@ function MyApp({
   const [queryClient] = useState(new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps?.dehydratedState}>
-        <SessionProvider session={pageProps.session}>
-          <Component {...pageProps} />
-        </SessionProvider>
-        <ReactQueryDevtools />
-      </Hydrate>
-    </QueryClientProvider>
+    <>
+      <Script
+        id="kakao-sdk"
+        async
+        src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.js"
+        integrity="sha384-OfbOqPoV2XcfZpqrLgqYCNSNBJW4JU/lLrtKk0cpkWvCrDRotHaQ9SSMGeP7u8NB"
+        crossOrigin="anonymous"
+        strategy="lazyOnload"
+        onLoad={() =>
+          window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_SCRIPT_KEY ?? '')
+        }
+      />
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps?.dehydratedState}>
+          <SessionProvider session={pageProps.session}>
+            <Component {...pageProps} />
+          </SessionProvider>
+          <ReactQueryDevtools />
+        </Hydrate>
+      </QueryClientProvider>
+    </>
   );
 }
 
