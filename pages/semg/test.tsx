@@ -10,7 +10,7 @@ import React, {
 import Layout from '@components/layout';
 import Answer from '@components/mbti/answer';
 import Article from '@components/mbti/article';
-import { ARTICLE } from '@constants/article';
+import { QUESTIONS } from '@constants/fashion-test';
 import { getEmoji } from '@libs/client';
 
 const SemgTest: NextPage = () => {
@@ -18,10 +18,10 @@ const SemgTest: NextPage = () => {
   const [timer, setTimer] = useState<ReturnType<typeof setTimeout>>();
   const [index, setIndex] = useState<number>(0);
 
-  const { answers, text, thumbnail, order } = useMemo(
-    () => ARTICLE[index],
-    [index],
-  );
+  // const { answers, text, thumbnail, order } = useMemo(
+  //   () => QUESTIONS[index],
+  //   [index],
+  // );
 
   const onSelect: ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
     setTimer(setTimeout(() => setOn(false), 300));
@@ -43,7 +43,7 @@ const SemgTest: NextPage = () => {
     <Layout showGNB={false}>
       <section className="p-layoutX pt-[10px]">
         <h1 className="font-bold text-lg mb-6">패션 취향 분석 검사</h1>
-        <Article on={on} order={order} text={text} thumbnail={thumbnail} />
+        {/* <Article on={on} order={order} text={text} thumbnail={thumbnail} />
         <p className="mt-2 mx-auto font-medium text-[10px] w-fit text-gray-75">
           Tip | 너무 오래 고민하지 말고 바로 떠오르는 답을 고르는 게 좋아요!
         </p>
@@ -59,7 +59,7 @@ const SemgTest: NextPage = () => {
               onChange={onSelect}
             />
           ))}
-        </ul>
+        </ul> */}
       </section>
     </Layout>
   );
