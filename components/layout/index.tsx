@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 import Footer from './footer';
 import Header from './header';
@@ -19,6 +20,13 @@ function Layout({
       <main className="bg-gray-778 pb-[100px]">{children}</main>
       {/* GNB */}
       {showGNB && <Footer />}
+      <ToastContainer
+        hideProgressBar
+        position="top-center"
+        toastStyle={{
+          textAlign: 'center',
+        }}
+      />
     </div>
   );
 }

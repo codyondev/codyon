@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import Layout from '@components/layout';
 import useKakaoFeedShare from '@hooks/useKakaoFeedShare';
@@ -57,7 +57,6 @@ const Semg: NextPage = () => {
       >
         <span className="mr-5">👀</span>테스트 시작하기
       </Link>
-      <ToastContainer hideProgressBar position="top-center" />
     </Layout>
   );
 };

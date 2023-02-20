@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 import { DefaultFeedSettings } from '@custom-types/kakao';
 
@@ -31,8 +32,8 @@ const useKakaoFeedShare = (container?: `#${string}`) => {
           ...initialSettings,
           ...settings,
         });
-      } catch (error) {
-        console.log(error);
+      } catch {
+        toast.error('공유 기능을 사용할 수 없습니다.');
       }
     },
     [container],
