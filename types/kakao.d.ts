@@ -66,7 +66,7 @@ export interface Settings {
   serverCallbackArgs?: Object | string;
 }
 
-type ObjectType =
+export type ObjectType =
   | 'feed'
   | 'list'
   | 'location'
@@ -121,7 +121,7 @@ export interface DefaultCalendarSettings extends Omit<Settings, 'buttonTitle'> {
   content: ContentObject;
 }
 
-type SettingParam =
+export type SettingParam =
   | DefaultFeedSettings
   | DefaultCalendarSettings
   | DefaultCommerceSettings
@@ -131,9 +131,9 @@ type SettingParam =
 
 interface KakaoShare {
   readonly createDefaultButton: <T>(
-    settings: T & { container: string },
+    settings: Partial<T> & { container: `#${string}` },
   ) => void;
-  readonly sendDefault: <T>(settings: T) => void;
+  readonly sendDefault: <T>(settings: Partial<T>) => void;
 }
 
 interface KakaoBase {
