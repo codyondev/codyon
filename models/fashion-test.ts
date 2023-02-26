@@ -8,13 +8,15 @@ export type AllMBTI = M | B | T | I;
 export type MBTI = `${M}${B}${T}${I}`;
 
 export type Answer = {
+  questionId: string;
+  sequence: number;
   text: string;
-  value: { [key in MBTI]: number };
+  value: { [key in AllMBTI]: number };
 };
 
-export interface Question {
+export type Question = {
   sequence: number;
   text: string;
   image?: string;
   answers: Answer[];
-}
+};

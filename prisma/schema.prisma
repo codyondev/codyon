@@ -61,3 +61,25 @@ model VerificationToken {
   @@unique([identifier, token])
   @@map("verification_tokens")
 }
+
+model FashionTestQuestion {
+  id       String              @unique @default(cuid())
+  sequence Int
+  text     String
+  image    String?
+  answers  FashionTestAnswer[]
+
+  @@unique([id, sequence])
+  @@map("fashion_test.question")
+}
+
+model FashionTestAnswer {
+  question   FashionTestQuestion @relation(fields: [questionId], references: [id])
+  questionId String              @map("question_id")
+  sequence   Int
+  text       String              
+  value      Json
+
+  @@unique([questionId, sequence])
+  @@map("fashion_test.answer")
+}
