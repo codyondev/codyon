@@ -1,14 +1,12 @@
-import { NextPage } from 'next';
 import { signIn, useSession } from 'next-auth/react';
 import Head from 'next/head';
 import React, { useState } from 'react';
 
-import CheckEmail from '@components/auth/check-email';
-import SignUpForm from '@components/auth/signup-form';
-import CodyOnHeader from '@components/common/codyon-header';
-import AuthLayout from '@components/layout/auth';
+import { CodyonHeader } from '@components/UI';
+import { CheckEmail, SignUpForm } from '@components/auth';
+import { AuthLayout } from '@components/layout';
 
-const SignUp: NextPage = function () {
+function SignUpPage() {
   const [confirm, setConfirm] = useState<boolean>(false);
   const { data: session } = useSession();
 
@@ -20,7 +18,7 @@ const SignUp: NextPage = function () {
       </Head>
       <AuthLayout>
         <header>
-          <CodyOnHeader />
+          <CodyonHeader />
         </header>
         {confirm ? (
           <CheckEmail />
@@ -54,6 +52,6 @@ const SignUp: NextPage = function () {
       </AuthLayout>
     </>
   );
-};
+}
 
-export default SignUp;
+export default SignUpPage;

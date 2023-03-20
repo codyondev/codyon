@@ -17,6 +17,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@icons": ["components/icons"],
+      "@icons/*": ["components/icons/*"],
       "@pages/*": ["pages/*"],
       "@components/*": ["components/*"],
       "@libs/*": ["libs/*"],
@@ -30,11 +32,15 @@
       "@constants/*": ["constants/*"],
       "@store/*": ["store/*"],
       "@requests/*": ["requests/*"],
-      "@custom-types/*": ["types/*"],
-      "@icons": ["components/icons"],
-      "@icons/*": ["components/icons/*"]
+      "@custom-types/*": ["types/*"]
     }
   },
-  "include": ["types/*.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "types/*.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/layout/Layout/Layout.tsx"
+  ],
   "exclude": ["node_modules"]
 }

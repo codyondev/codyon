@@ -1,14 +1,11 @@
-import { NextPage } from 'next';
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React from 'react';
 
-import CheckEmail from '@components/auth/check-email';
-import SignInForm from '@components/auth/signin-form';
-import SignUpForm from '@components/auth/signup-form';
-import CodyOnHeader from '@components/common/codyon-header';
-import AuthLayout from '@components/layout/auth';
+import CodyonHeader from '@components/UI/CodyonHeader/CodyonHeader';
+import { SignInForm } from '@components/auth';
+import { AuthLayout } from '@components/layout';
 
-const SignIn: NextPage = function () {
+function SignInPage() {
   return (
     <>
       <Head>
@@ -17,7 +14,7 @@ const SignIn: NextPage = function () {
       </Head>
       <AuthLayout>
         <header>
-          <CodyOnHeader />
+          <CodyonHeader />
         </header>
         <section className="mt-11">
           <SignInForm />
@@ -37,6 +34,6 @@ const SignIn: NextPage = function () {
       </AuthLayout>
     </>
   );
-};
+}
 
-export default SignIn;
+export default SignInPage;

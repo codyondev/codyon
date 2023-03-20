@@ -1,13 +1,12 @@
-import { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toast } from 'react-toastify';
 
-import Layout from '@components/layout';
+import { Layout } from '@components/layout';
 import { useKakaoFeedShare } from '@hooks';
 
-const Semg: NextPage = () => {
+function MBTIPage() {
   const { sendKakao } = useKakaoFeedShare();
 
   return (
@@ -59,6 +58,6 @@ const Semg: NextPage = () => {
       </Link>
     </Layout>
   );
-};
+}
 
-export default Semg;
+export default MBTIPage;

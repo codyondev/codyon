@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from 'next';
+import { GetServerSideProps } from 'next';
 import React, {
   ChangeEventHandler,
   useCallback,
@@ -7,13 +7,12 @@ import React, {
 } from 'react';
 import { QueryClient, dehydrate } from 'react-query';
 
-import Layout from '@components/layout';
-import Answer from '@components/mbti/answer';
-import Article from '@components/mbti/article';
+import { Layout } from '@components/layout';
+import { Answer, Question } from '@components/mbti';
 import { useQuestionItem } from '@hooks/mbti/useQuestionItem';
 import { getQuestions } from '@requests/mbti/getQuestions';
 
-const SemgTest: NextPage = () => {
+function MBTITestPage() {
   const [on, setOn] = useState<boolean>(false);
   const [timer, setTimer] = useState<ReturnType<typeof setTimeout>>();
   const [index, setIndex] = useState<number>(0);
@@ -42,7 +41,7 @@ const SemgTest: NextPage = () => {
     <Layout showGNB={false}>
       <section className="p-layoutX pt-[10px]">
         <h1 className="font-bold text-lg mb-6">패션 취향 분석 검사</h1>
-        <Article on={on} order={index + 1} text={text} thumbnail={image} />
+        <Question on={on} order={index + 1} text={text} thumbnail={image} />
         <p className="mt-2 mx-auto font-medium text-[10px] w-fit text-gray-75">
           Tip | 너무 오래 고민하지 말고 바로 떠오르는 답을 고르는 게 좋아요!
         </p>
@@ -61,11 +60,11 @@ const SemgTest: NextPage = () => {
       </section>
     </Layout>
   );
-};
+}
 
-export default SemgTest;
+export default MBTITestPage;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(['questions'], getQuestions);
   return {

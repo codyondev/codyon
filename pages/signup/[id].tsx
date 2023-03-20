@@ -1,12 +1,11 @@
-import { NextPage } from 'next';
 import Image from 'next/image';
 import React from 'react';
 
-import CodyonHeader from '@components/common/codyon-header';
-import AuthLayout from '@components/layout/auth';
+import { CodyonHeader } from '@components/UI';
+import { AuthLayout } from '@components/layout';
 import Email from '@public/images/email.svg';
 
-const ConfirmEmail: NextPage = () => {
+function ConfirmEmail() {
   return (
     <AuthLayout>
       <header>
@@ -33,6 +32,6 @@ const ConfirmEmail: NextPage = () => {
       </section>
     </AuthLayout>
   );
-};
+}
 
 export default ConfirmEmail;

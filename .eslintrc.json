@@ -44,7 +44,8 @@
     "react/button-has-type": "warn",
     "func-names": "off",
     "react/require-default-props": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-restricted-exports": "off"
   },
   "overrides": [
     {

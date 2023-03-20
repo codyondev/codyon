@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-import AdvertisingBanner from '@components/landing/advertising-banner';
-import Brand from '@components/landing/brand';
-import FashionProfile from '@components/landing/fashion-profile';
-import RoleModel from '@components/landing/role-model';
-import Layout from '@components/layout';
+import {
+  AdvertisingBanner,
+  Brand,
+  FashionProfile,
+  RoleModel,
+} from '@components/landing';
+import { Layout } from '@components/layout';
 
-const Home: NextPage = function () {
+function Home() {
   return (
     <Layout>
       <nav className="p-layoutX mt-[10px] flex gap-x-[28px]">
@@ -31,7 +31,7 @@ const Home: NextPage = function () {
         <h2 className="font-bold text-lg mb-6">패션 프로필</h2>
         <FashionProfile
           id="yxrxm_"
-          semg="FEMG"
+          mbti="FEMG"
           description="날이 좋아서, 날이 좋지 않아서, 날이 적당해서. 모든 날에 화려하고 싶었다."
           thumbnail="/images/example-1.svg"
         />
@@ -71,6 +71,6 @@ const Home: NextPage = function () {
       </section>
     </Layout>
   );
-};
+}
 
 export default Home;

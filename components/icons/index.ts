@@ -1,7 +1,7 @@
-export { default as CircleAlert } from './circle-alert';
-export { default as Group } from './group';
-export { default as Home } from './home';
+export { default as CircleAlert } from './CircleAlert';
+export { default as Group } from './Group';
+export { default as Home } from './Home';
 
-export { default as Profile } from './profile';
-export { default as Search } from './search';
-export { default as UnHappy } from './un-happy';
+export { default as Profile } from './Profile';
+export { default as Search } from './Search';
+export { default as UnHappy } from './UnHappy';

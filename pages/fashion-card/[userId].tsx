@@ -1,10 +1,9 @@
-import { NextPage } from 'next';
 import React, { useState } from 'react';
 
-import FlipCard from '@components/fashion-card/flip-card';
+import { FlipCard } from '@components/fashionCard';
 import { cn } from '@libs/client';
 
-const FashionCardWithUser: NextPage = function () {
+function FashionCardWithUserPage() {
   const [rotate, setRotate] = useState<boolean>(false);
 
   const onToggleRotate = () => setRotate((prev) => !prev);
@@ -37,6 +36,6 @@ const FashionCardWithUser: NextPage = function () {
       </footer>
     </>
   );
-};
+}
 
-export default FashionCardWithUser;
+export default FashionCardWithUserPage;
