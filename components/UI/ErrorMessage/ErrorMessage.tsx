@@ -6,7 +6,7 @@ interface ErrorMessageProps {
   message: string;
 }
 
-const ErrorMessage = function ({ message }: ErrorMessageProps) {
+function ErrorMessage({ message }: ErrorMessageProps) {
   const text = useMemo(() => {
     return (
       {
@@ -25,6 +25,6 @@ const ErrorMessage = function ({ message }: ErrorMessageProps) {
       {text}
     </span>
   );
-};
+}
 
-export default memo(ErrorMessage);
+export default ErrorMessage;

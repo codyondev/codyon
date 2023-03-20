@@ -11,7 +11,7 @@ interface FlipCardProps {
   layoutClassName?: string;
 }
 
-export default function FlipCard({ rotate, layoutClassName }: FlipCardProps) {
+function FlipCard({ rotate, layoutClassName }: FlipCardProps) {
   const href = useMemo(() => {
     if (typeof window === 'undefined') {
       return '';
@@ -78,3 +78,5 @@ export default function FlipCard({ rotate, layoutClassName }: FlipCardProps) {
     </div>
   );
 }
+
+export default FlipCard;

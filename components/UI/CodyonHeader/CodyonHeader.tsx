@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CodyonHeader = function () {
+function CodyonHeader() {
   return (
     <>
       <h1 className="text-center font-medium site-name">CODY ON</h1>
@@ -9,6 +9,6 @@ const CodyonHeader = function () {
       </h3>
     </>
   );
-};
+}
 
 export default CodyonHeader;

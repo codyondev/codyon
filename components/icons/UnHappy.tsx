@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, memo } from 'react';
 
-const UnHappy = function ({ ...rest }: HTMLAttributes<SVGSVGElement>) {
+function UnHappy({ ...rest }: HTMLAttributes<SVGSVGElement>) {
   return (
     <svg
       width="15"
@@ -19,6 +19,6 @@ const UnHappy = function ({ ...rest }: HTMLAttributes<SVGSVGElement>) {
       <circle cx="10" cy="5" r="1" fill="#45C6D7" />
     </svg>
   );
-};
+}
 
-export default memo(UnHappy);
+export default UnHappy;
