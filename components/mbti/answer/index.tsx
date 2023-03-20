@@ -16,11 +16,10 @@ const defaultStyle: CSSProperties = {
 interface AnswerProps extends React.InputHTMLAttributes<HTMLInputElement> {
   current: boolean;
   index: number;
-  icon: React.ReactNode;
   text: string;
 }
 
-function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
+function Answer({ current, index, text, ...rest }: AnswerProps) {
   const transitionStyles: Partial<Record<TransitionStatus, CSSProperties>> =
     useMemo(
       () => ({
@@ -70,7 +69,6 @@ function Answer({ current, index, icon, text, ...rest }: AnswerProps) {
             }}
             htmlFor={text}
           >
-            <span className={styles.icon}>{icon}</span>
             {text}
           </label>
         </li>

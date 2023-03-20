@@ -16,7 +16,7 @@ const initialSettings: Partial<DefaultFeedSettings> = {
   ],
 };
 
-const useKakaoFeedShare = (container?: `#${string}`) => {
+export const useKakaoFeedShare = (container?: `#${string}`) => {
   useEffect(() => {
     if (!window.Kakao?.isInitialized()) {
       window.Kakao?.init(process.env.NEXT_PUBLIC_KAKAO_SCRIPT_KEY ?? '');
@@ -50,5 +50,3 @@ const useKakaoFeedShare = (container?: `#${string}`) => {
 
   return { createButton, sendKakao };
 };
-
-export default useKakaoFeedShare;

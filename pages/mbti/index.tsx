@@ -5,7 +5,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toast } from 'react-toastify';
 
 import Layout from '@components/layout';
-import useKakaoFeedShare from '@hooks/useKakaoFeedShare';
+import { useKakaoFeedShare } from '@hooks';
 
 const Semg: NextPage = () => {
   const { sendKakao } = useKakaoFeedShare();

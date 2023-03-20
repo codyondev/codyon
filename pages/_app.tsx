@@ -1,7 +1,7 @@
+import axios from 'axios';
 import { DefaultSession } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
 import Script from 'next/script';
 import React, { useState } from 'react';
 import {
@@ -16,6 +16,8 @@ import 'react-toastify/ReactToastify.css';
 import wrapper from '@store/index';
 
 import '../styles/globals.css';
+
+axios.defaults.baseURL = 'https://www.codyon.site';
 
 function MyApp({
   Component,

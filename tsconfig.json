@@ -20,15 +20,19 @@
       "@pages/*": ["pages/*"],
       "@components/*": ["components/*"],
       "@libs/*": ["libs/*"],
+      "@hooks": ["hooks"],
       "@hooks/*": ["hooks/*"],
       "@models/*": ["models/*"],
       "@mocks/*": ["mocks/*"],
       "@styles/*": ["styles/*"],
       "@public/*": ["public/*"],
+      "@constants": ["constants"],
       "@constants/*": ["constants/*"],
       "@store/*": ["store/*"],
       "@requests/*": ["requests/*"],
-      "@custom-types/*": ["types/*"]
+      "@custom-types/*": ["types/*"],
+      "@icons": ["components/icons"],
+      "@icons/*": ["components/icons/*"]
     }
   },
   "include": ["types/*.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],

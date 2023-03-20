@@ -30,6 +30,7 @@ module.exports = {
         'refactor',
         'revert',
         'remove',
+        'rename',
         'style',
         'test',
       ],

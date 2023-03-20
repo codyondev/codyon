@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { MBTI } from '@models/fashion-test';
+import { MBTI } from '@models/mbti';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
