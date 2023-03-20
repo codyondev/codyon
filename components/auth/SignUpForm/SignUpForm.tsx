@@ -23,7 +23,7 @@ const options: Option[] = EMAIL_DOMAIN.map((domain) => ({
   value: domain,
 })).concat({ label: '직접 입력', value: 'directly' });
 
-export default function SignUpForm({ setConfirm }: SignUpFormProps) {
+function SignUpForm({ setConfirm }: SignUpFormProps) {
   const [directly, setDirectly] = useState<boolean>(false);
   const [loginError, setLoginError] = useState<boolean>(false);
   const { register, watch, resetField, handleSubmit, formState, setError } =
@@ -61,38 +61,38 @@ export default function SignUpForm({ setConfirm }: SignUpFormProps) {
       <div className="grid grid-cols-2 gap-2 mt-2">
         <Form.Input
           placeholder="이메일"
-          register={register('email', { required: true })}
+          aria-label="email"
           value={watch('email')}
           error={errors.email}
-          aria-label="email"
+          {...register('email', { required: true })}
         />
         {directly ? (
           <Form.Input
             placeholder="직접입력"
-            register={register('domain', { required: true })}
+            aria-label="input-domain"
             value={watch('domain')}
             error={errors.domain}
-            aria-label="input-domain"
+            {...register('domain', { required: true })}
           />
         ) : (
           <Form.Select
-            register={register('domain')}
             options={options}
-            onChangeDirectly={onChangeDirectly}
             aria-label="select-domain"
+            {...register('domain')}
+            onChange={onChangeDirectly}
           />
         )}
         <Form.Input
           placeholder="비밀번호"
           type="password"
           overrideClassName="col-span-2"
-          register={register('password', {
+          aria-label="password"
+          value={watch('password')}
+          error={errors.password}
+          {...register('password', {
             required: true,
             pattern: { message: 'not_match', value: PASSWORD_REGEXP },
           })}
-          value={watch('password')}
-          error={errors.password}
-          aria-label="password"
         />
       </div>
       <button
@@ -109,3 +109,5 @@ export default function SignUpForm({ setConfirm }: SignUpFormProps) {
     </form>
   );
 }
+
+export default SignUpForm;

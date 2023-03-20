@@ -3,7 +3,7 @@ import React from 'react';
 
 import Sent from '@public/images/sent.svg';
 
-export default function CheckEmail() {
+function CheckEmail() {
   return (
     <>
       <section className="mt-[4.7rem] flex flex-col items-center">
@@ -24,3 +24,4 @@ export default function CheckEmail() {
     </>
   );
 }
+export default CheckEmail;

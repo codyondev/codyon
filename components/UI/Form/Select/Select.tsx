@@ -1,30 +1,26 @@
-import React from 'react';
+import React, { HTMLAttributes, forwardRef } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 import { cn } from '@libs/client';
 
-interface SelectProps {
-  register: UseFormRegisterReturn;
-  onChangeDirectly: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+interface SelectProps extends HTMLAttributes<HTMLSelectElement> {
   overrideClassName?: string;
   options: { label: string; value: string }[];
 }
 
-const Select = function ({
-  register,
-  overrideClassName,
-  options,
-  onChangeDirectly,
-}: SelectProps) {
+function Select(
+  { overrideClassName, options, ...rest }: SelectProps,
+  ref: React.LegacyRef<HTMLSelectElement>,
+) {
   return (
     <select
-      {...register}
       className={cn(
         overrideClassName ?? '',
         'bg-white border-gray-29',
         'text-[14px] px-[1.4em] py-[1.1em] rounded-md text-dark outline-none focus:border-darkmint focus:border-1 placeholder:text-gray-88 border appearance-none',
       )}
-      onChange={(e) => onChangeDirectly(e)}
+      ref={ref}
+      {...rest}
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
@@ -33,6 +29,6 @@ const Select = function ({
       ))}
     </select>
   );
-};
+}
 
-export default Select;
+export default forwardRef(Select);

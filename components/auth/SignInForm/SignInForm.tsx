@@ -12,7 +12,7 @@ interface SignInFormType {
   password: string;
 }
 
-export default function SignInForm() {
+function SignInForm() {
   const [loginError, setLoginError] = useState<boolean>(false);
   const { register, watch, handleSubmit, formState } = useForm<SignInFormType>({
     mode: 'onBlur',
@@ -37,21 +37,21 @@ export default function SignInForm() {
       <div className="grid grid-cols-1 gap-2 mt-2">
         <Form.Input
           placeholder="이메일"
-          register={register('email', { required: true })}
+          aria-label="email"
           value={watch('email')}
           error={errors.email}
-          aria-label="email"
+          {...register('email', { required: true })}
         />
         <Form.Input
           placeholder="비밀번호"
           type="password"
-          register={register('password', {
+          aria-label="password"
+          value={watch('password')}
+          error={errors.password}
+          {...register('password', {
             required: true,
             pattern: { message: 'not_match', value: PASSWORD_REGEXP },
           })}
-          value={watch('password')}
-          error={errors.password}
-          aria-label="password"
         />
       </div>
       <button
@@ -68,3 +68,5 @@ export default function SignInForm() {
     </form>
   );
 }
+
+export default SignInForm;
