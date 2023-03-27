@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
 
-import GroupIcon from '@components/icons/Group';
-import HomeIcon from '@components/icons/Home';
-import ProfileIcon from '@components/icons/Profile';
-import SearchIcon from '@components/icons/Search';
+import GroupIcon from '@icons/Group';
+import HomeIcon from '@icons/Home';
+import ProfileIcon from '@icons/Profile';
+import SearchIcon from '@icons/Search';
 
 function Footer() {
   return (
