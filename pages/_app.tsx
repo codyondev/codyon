@@ -17,7 +17,7 @@ import wrapper from '@store/index';
 
 import '../styles/globals.css';
 
-axios.defaults.baseURL = 'https://www.codyon.site';
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 function MyApp({
   Component,
